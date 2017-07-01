@@ -1,5 +1,5 @@
 angular.module('homepageCtrl',[])
-.controller('homepageCtrl',function($scope,$element,$interval){
+.controller('homepageCtrl',function($scope,$element,$location){
 	$scope.navs=[
 		{name:'咨询',href:'/consultation'},
 		{name:'电影',href:'/moviesShow'},
@@ -13,7 +13,7 @@ angular.module('homepageCtrl',[])
 		if(!input.val()){
 			window.alert('请输入内容');
 		}else{
-			document.location.assign('http://127.0.0.1:8020/电影网站1/movieSearch.ejs#?name='+input.val());
+			document.location.assign('/moviesSearch?name='+input.val());
 		}
 	}
 	

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="moviesSearch">
+	<head>
+		<meta charset="UTF-8">
+		<title>电影网站test</title>
+		<link rel="stylesheet" href="views/css/moviesShow.css" />
+		<script type="text/javascript" src="views/js/angular.js" ></script>
+		<script type="text/javascript" src="views/js/angular-resource.js" ></script>
+		<script>
+			angular.module('moviesSearch',['myFilter','ngResource'])
+		</script>
+		<script type="text/javascript" src="views/controllers/moviesSearchCtrl.js" ></script>
+		<script type="text/javascript" src="views/components/moviesSearch.js" ></script>
+		<script type="text/javascript" src="views/filters/movieChipFilter.js" ></script>
+	</head>
+	<body ng-controller="moviesSearchCtrl">
+		<nav class="nav">
+			<a target="_self" href="/" class="logo"><span>人生05</span></a>
+			<ul class="nav_ul">
+				<a target="_blank" href="{{nav.href}}" ng-repeat="nav in navs">
+					<li>
+						{{nav.name}}
+					</li>
+				</a>
+			</ul>
+		</nav>
+		<div class="movieBox" ng-show="finish">
+			<div movie-chip information-total="<%= total %>"></div>
+		</div>
+	</body>
+</html>

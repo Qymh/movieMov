@@ -1,5 +1,6 @@
 var MoviesAll=require('../lib/moviesAll')
 
+// 显示电影界面
 exports.list=function(req,res,next){
 	MoviesAll.getPage(function(err,total){
 		res.render('moviesShow.ejs',{
@@ -8,16 +9,19 @@ exports.list=function(req,res,next){
 	})
 }
 
+// 显示单独电影界面
 exports.show=function(req,res,next){
 	var count=req.params.count
 	res.render('movies/movies.ejs')
 }
 
+// 显示单独最新电影界面
 exports.showNew=function(req,res,next){
 	var count=req.params.count
 	res.render('movies/movies.ejs')
 }
 
+// 按页数搜索电影
 exports.search=function(req,res,next){
 	var count=req.params.count
 	
@@ -41,6 +45,7 @@ exports.search=function(req,res,next){
 	})
 }
 
+// 按页数搜索最新电影
 exports.searchNew=function(req,res,next){
 	var count=req.params.count
 	
@@ -53,5 +58,14 @@ exports.searchNew=function(req,res,next){
 					res.json(arr)
 				}
 			})
+	})
+}
+
+// 按名字搜索电影
+exports.searchMovies=function(req,res,next){
+	MoviesAll.getPage(function(err,total){
+		res.render('moviesSearch.ejs',{
+			total:total
+		})
 	})
 }

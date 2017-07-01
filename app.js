@@ -42,6 +42,9 @@ app.get('/',homepage.list)
 // 电影界面
 app.get('/moviesShow',moviesShow.list)
 
+// 电影搜索界面
+app.get('/moviesSearch',moviesShow.searchMovies)
+
 // 电影咨询界面
 app.get('/consultation',moviesPress.showMore)
 
