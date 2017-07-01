@@ -20,7 +20,7 @@ angular.module('moviesSearch')
 				scope.moviesAllResource.query().$promise.then(function(movies){
 					movies.forEach(function(movie){
 						var inner=movie.name
-						if(inner==name){
+						if(inner.indexOf(name)>-1){
 							scope.moviesShow.push(movie)
 						}
 					})
