@@ -66,6 +66,8 @@ app.post('/api/moviePressReview',api.moviePressReviewAdd)		// 添加评论
 
 /*********关于电影报刊******/
 app.get('/api/agent/moviesPress/:page',moviesPressPage(moviesPressLib.getPage,6),api.getMoviesPress)	// 获取电影报刊
+app.get('/api/agent/moviesConsultation/:page',moviesPressPage(moviesPressLib.getPage,9),api.getMoviesPress)	// 获取电影报刊
+
 app.post('/api/agent/moviesPress',api.postMoviesPress)			// 提交电影报刊
 app.put('/api/agent/moviesPress/:property',api.putMoviesPress)			// 修改电影报刊
 

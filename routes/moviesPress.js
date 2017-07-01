@@ -30,7 +30,10 @@ exports.list=function(req,res,next){
 
 // 显示咨询
 exports.showMore=function(req,res,next){
-	MoviesPress.getRange(0,-1,function(err,moviesPress){
-		res.json(moviesPress)
+	MoviesPress.getPage(function(err,total){
+		if(err) return next(err)
+		res.render('moviesConsultation.ejs',{
+			total:total
+		})
 	})
 }
