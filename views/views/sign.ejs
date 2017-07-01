@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="sign">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>登陆</title>
+		<link rel="stylesheet" href="views/css/reset.css" />
+		<link rel="stylesheet" href="views/css/sign.css" />
+		<script type="text/javascript" src="views/js/angular.js"></script>
+		<script type="text/javascript" src="views/js/angular-resource.js"></script>
+		<script>
+			angular.module('sign',[])
+				.constant('baseurlForUser', 'http://localhost:5500/sign')
+				.controller('signCtrl', function($scope,$http,baseurlForUser) {
+					$scope.signn = function(infor) {
+						$http.post(baseurlForUser,infor)
+					}
+				})
+		</script>
+	</head>
+
+	<body ng-controller="signCtrl">
+		<div class="signBox">
+			<h1 class="signBox_title">Sign</h1>
+			<form name="sign" class="signBox_form" action="/sign" method="post">
+				<div><label>名称(登陆帐号)</label></div>
+				<p><input name="signName" ng-model="sign.name" 
+					ng-minlength="4" ng-maxlength="10" required="required"
+					 placeholder="请输入您的帐号">
+					<span class="error" ng-show="sign.signName.$dirty
+						&&sign.signName.$invalid">
+						名字在4到10位
+					</span>
+				</p>
+				<div><label>密码</label></div>
+				<p><input type="password" name="signPassword" 
+					ng-model="sign.password" ng-minlength="6" ng-maxlength="18"
+					 required="required" placeholder="请输入您的密码">
+					<span class="error" ng-show="sign.signPassword.$dirty
+						&&sign.signPassword.$invalid">
+						密码在6到18位
+					</span>
+				</p>
+				<% include ../messages %>
+				<button type="submit" class="signBox_form_sign"
+					 ng-disabled="sign.$invalid">登陆</button>
+			</form>
+		</div>
+	</body>
+
+</html>

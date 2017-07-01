@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="moviesShow">
+	<head>
+		<meta charset="UTF-8">
+		<title>电影网站test</title>
+		<link rel="stylesheet" href="views/css/reset.css" />
+		<link rel="stylesheet" href="views/css/moviesShow.css" />
+		<script type="text/javascript" src="views/js/angular.js" ></script>
+		<script type="text/javascript" src="views/js/angular-route.js" ></script>
+		<script type="text/javascript" src="views/js/angular-resource.js" ></script>
+		<script type="text/javascript" src="views/js/angular-animate.js" ></script>
+		<script>
+			angular.module('moviesShow',['myFilter','ngResource','navSearch'])
+		</script>
+		<script type="text/javascript" src="views/components/moviesShow.js" ></script>
+		<script type="text/javascript" src="views/components/navSearch.js" ></script>
+		<script type="text/javascript" src="views/controllers/moviesShowCtrl.js" ></script>
+		<script type="text/javascript" src="views/filters/movieChipFilter.js" ></script>
+	</head>
+	<body ng-controller="moviesShowCtrl">
+		<nav class="nav">
+			<a target="_target" href="/" class="logo"><span>人生05</span></a>
+			<ul class="nav_ul">
+				<a target="_self" href="{{nav.href}}" ng-repeat="nav in navs">
+					<li>	
+						{{nav.name}}
+					</li>
+				</a>
+			</ul>
+			<div nav-search ng-keydown='searchKeyDown($event)'>
+			</div>
+			<span class="button" ng-click="searchButton()">搜索</button>
+		</nav>
+		<div class="moviesBox">
+			<div movie-chip information-total="<%= total %>"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+<div class="skyDrive_search">
+	<input placeholder="搜索网盘区">
+	<span>搜索</span>
+</div>
+<a class="skyDrive_movies" href="/moviesSkyDrive/{{movie.src}}" ng-repeat="movie in moviesSkyDrive">
+		<span class="skyDrive_movies_name">{{movie.name}}</span>
+		<span class="skyDrive_movies_time">{{movie.time}}</span>
+</a>
+<div class="skyDrive_counter">
+	<span ng-repeat="count in counts" ng-class="count==1?'skyDrive_counter_focus':''"
+		 ng-click="show(count,$event)">{{count}}</span>
+</div>
+<div class="skyDrive_attention">
+	<h1>关注微信微博</h1>
+	<img class="weixin">
+	<img class="weibo">
+</div>

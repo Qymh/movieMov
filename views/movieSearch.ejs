@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="movieSearch">
+	<head>
+		<meta charset="UTF-8">
+		<title>电影网站test</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/movieShow.css" />
+		<script type="text/javascript" src="js/angular.js" ></script>
+		<script type="text/javascript" src="js/angular-route.js" ></script>
+		<script type="text/javascript" src="js/angular-resource.js" ></script>
+		<script type="text/javascript" src="js/angular-animate.js" ></script>
+		<script>
+			var results=[];
+			var indexCount=0;
+			var leftNum=1;
+			var rightNum;
+			var differ;
+			var middleNum;
+		</script>
+		<script>
+			angular.module('movieSearch',['myFilter','ngResource'])
+		</script>
+		<script type="text/javascript" src="controllers/movieSearchCtrl.js" ></script>
+		<script type="text/javascript" src="components/movieSearch.js" ></script>
+		<script type="text/javascript" src="filters/movieChipFilter.js" ></script>
+		<script>
+			var indexPageCount=1;
+			var result=[];
+			var right;
+			var rightMax;
+		</script>
+	</head>
+	<body ng-controller="movieSearchCtrl">
+		<nav class="nav">
+			<a target="_self" href="homepage.ejs" class="logo"><span>人生05</span></a>
+			<ul class="nav-ul">
+				<a target="_blank" href="{{nav.href}}" ng-repeat="nav in navs">
+					<li>
+						{{nav.name}}
+					</li>
+				</a>
+			</ul>
+		</nav>
+		<div class="movieBox" ng-show="finish">
+			<div movie-chip information-movie="movies"
+				information-page="selectedPage"></div>
+		</div>
+	</body>
+</html>

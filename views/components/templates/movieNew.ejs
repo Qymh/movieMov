@@ -1,0 +1,13 @@
+<h1 class="movieNew_title">最新更新电影</h1>
+<div class="movieNew_box">
+	<div ng-repeat="movie in movies" class="movieNew_chip">
+		<a target="_blank" href="/moviesNew/{{movie.src}}"><h1>{{movie.name}}</h1></a>
+		<img ng-src=views/movieChipImages/{{movie.src}}.png>
+		<p>{{movie.des|forDes}}</p>
+	</div>
+</div>
+<a target="_blank" href="/moviesShow">
+	<span class="movieNew_button">
+		查看更多电影
+	</span>
+</a>

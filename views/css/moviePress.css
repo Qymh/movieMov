@@ -1,0 +1,266 @@
+@import url(reset.css);
+nav {
+  width: 100%;
+  height: 50px;
+  background-color: darkslateblue;
+  z-index: 100;
+  display: flex;
+  display: -moz-box;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+nav .logo {
+  text-decoration: none;
+  position: absolute;
+  left: 20px;
+  color: white;
+  cursor: pointer;
+  box-align: center;
+}
+
+nav .nav_ul {
+  position: absolute;
+  left: 100px;
+}
+
+nav .nav_ul li {
+  line-height: 50px;
+  height: 50px;
+  width: 70px;
+  text-align: center;
+  margin-left: 10px;
+  float: left;
+  cursor: pointer;
+}
+
+nav .nav_ul li:hover {
+  background-color: deepskyblue;
+  transition: all 0.2s ease-in-out;
+}
+
+nav .nav_ul a {
+  text-decoration: none;
+  color: linen;
+}
+
+nav div {
+  position: absolute;
+  left: 530px;
+}
+
+nav .search {
+  position: absolute;
+  top: 45px;
+  width: 214px;
+  border: 1px solid #ddd;
+  background: white;
+}
+
+nav .search li {
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  font-size: 15 px;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+nav .search li:hover {
+  transition: all 0.2s ease-in-out;
+  color: white;
+  background-color: deeppink;
+}
+
+nav input {
+  height: 30px;
+  width: 200px;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+nav .button {
+  position: absolute;
+  left: 750px;
+  text-align: center;
+  height: 36px;
+  line-height: 36px;
+  width: 36px;
+  background-color: deepskyblue;
+  padding: 0px 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+pre {
+  position: absolute;
+  left: 15%;
+  width: 70%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+}
+
+section {
+  margin-top: 150px;
+  width: 70%;
+  margin-left: 20%;
+}
+
+section h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+section .img1 {
+  margin-top: 100px;
+  height: 350px;
+  width: 650px;
+}
+
+section article {
+  width: 800px;
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 200px;
+  white-space: pre-wrap;
+  margin-bottom: 200px;
+}
+
+.usersView {
+  width: 70%;
+  margin-left: 20%;
+  margin-bottom: 200px;
+}
+
+.usersView h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.usersView .usersView_form {
+  margin-top: 50px;
+  width: 70%;
+  height: 300px;
+}
+
+.usersView_name {
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 5px;
+  padding-left: 20px;
+  height: 30px;
+  font-size: 15px;
+  width: 300px;
+  letter-spacing: 2px;
+}
+
+.usersView_des {
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-top: 10px;
+  height: 100px;
+  width: 500px;
+  font-size: 15px;
+  letter-spacing: 2px;
+  border: 1px solid #666;
+}
+
+.usersView_des_button {
+  height: 30px;
+  width: 300px;
+  margin-top: 20px;
+  padding: 5px 10px;
+  display: block;
+  line-height: 30px;
+  font-size: 15px;
+  text-decoration: none;
+  background-color: deepskyblue;
+  color: white;
+  cursor: pointer;
+}
+
+.usersView_des_button:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-color: deeppink;
+}
+
+.usersView_error {
+  display: block;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.usersView_button {
+  width: 100px;
+  height: 50px;
+  margin-top: 40px;
+  margin-left: 450px;
+  font-size: 15px;
+  cursor: pointer;
+  border: 0;
+  background-color: deepskyblue;
+  color: white;
+}
+
+.usersView_button:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-color: deeppink;
+}
+
+.usersView_chip {
+  position: relative;
+  padding-bottom: 20px;
+  width: 620px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #666;
+  margin-top: 60px;
+}
+
+.usersView_chip_name {
+  height: 70px;
+  width: 70px;
+  background-color: #666;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 70px;
+  color: white;
+}
+
+.usersView_chip_des {
+  line-height: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  margin-left: 100px;
+  width: 300px;
+  display: block;
+  font-size: 15px;
+  color: #666;
+  word-break: break-word;
+}
+
+.usersView_chip_date {
+  position: absolute;
+  font-size: 10px;
+  bottom: 10px;
+  right: 10px;
+  color: deepskyblue;
+}

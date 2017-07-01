@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html ng-app="moviePress">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../views/css/reset.css" />
+		<link rel="stylesheet" href="../views/css/moviePress.css" />
+		<script type="text/javascript" src="../views/js/angular.js" ></script>
+		<script type="text/javascript" src="../views/js/angular-resource.js" ></script>
+		<script>
+			angular.module('moviePress',['ngResource','navSearch'])
+			.constant('postForReview','http://localhost:3000/moviePressReview')
+			.constant('apiForReview','http://localhost:3000/api/moviePressReview')
+			.constant('getMoviesInformation','http://localhost:3000/api/agent/moviesPressInformation/')
+			.controller('moviePressCtrl',function($scope,$element,$location,$resource,$window
+				,$filter,postForReview,apiForReview,getMoviesInformation){
+				
+				// 获取页面参数
+				var test=$location.absUrl(),
+				count=test.match(/\/\d+/g)[0].match(/\d+/g)[0]
+				
+				var formEle=$element.find('form')
+				var textEle=$element.find('textarea')
+				
+				$scope.navs=[
+					{name:'咨询',href:'#'},
+					{name:'电影',href:'../movieShow.html'},
+					{name:'电视剧',href:'#'},
+					{name:'求片区',href:'#'},
+					{name:'更多+',href:'#'}
+				];
+				
+				// 获取报刊Resource
+				$scope.moviesInformationResource=$resource(getMoviesInformation+count)
+				
+				// 获取报刊信息
+				$scope.moviesInformationResource.query().$promise.then(function(data){
+					$scope.moviesInformation=data[0]
+					$scope.moviesInformation.information=
+					$scope.moviesInformation.information.split('   ').join('\n\n')
+				})
+				
+				// GET评论api
+				$scope.moviePressReviewResource=$resource(apiForReview+'/'+count)
+				
+				// POST评论api
+				$scope.moviePressReviewAddResource=$resource(apiForReview)
+				
+				// 获取评论到本地
+				$scope.reviews=$scope.moviePressReviewResource.query()
+				
+				// POST提交表单数据
+				$scope.sendView=function(usersView,username){
+					
+					var now=new Date()
+					var year=now.getFullYear()
+					var month=now.getMonth()+1
+					var day=now.getDate()
+					var hour=now.getHours()
+					var minute=now.getMinutes()
+					var second=now.getSeconds()
+					var time=year+'年'+month+'月'+day+'日'+hour+'时'+minute+'分'+second+'秒'
+					
+					usersView.time=time
+					usersView.name=username
+					
+					new $scope.moviePressReviewAddResource(usersView).$save().then(function(){
+						$scope.reviews.push({
+							des:usersView.des,
+							time:usersView.time,
+							name:username
+						})
+					})
+					
+					if(!angular.isDefined(usersView['des'])){
+						window.alert('请输入内容');
+						return;
+					}
+					
+					// 表单强制为空
+					textEle.val('')
+					
+					// 滚动到输入的评论
+					var height=document.defaultView.getComputedStyle(document.body).height;
+					height=parseInt(height);
+					document.body.scrollTop=height;
+				}
+				
+				
+				// 提交评论
+				$element.on('keydown',function(e){
+					if(e.keyCode==13){
+						$scope.sendView(usersView);
+					}
+				})
+			})
+		</script>
+		<script type="text/javascript" src="../views/components/navSearch.js" ></script>
+	</head>
+	<body ng-controller="moviePressCtrl">
+		<nav class="nav">
+			<a target="_self" href="/" class="logo"><span>人生05</span></a>
+			<ul class="nav_ul">
+				<a target="_blank" href="{{nav.href}}" ng-repeat="nav in navs">
+					<li>
+						{{nav.name}}
+					</li>
+				</a>
+			</ul>
+			<div nav-search ng-keydown='searchKeyDown($event)'>
+			</div>
+			<span class="button" ng-click="searchButton()">搜索</button>
+		</nav>
+		<section> 
+			<h1>{{moviesInformation.title}}</h1>
+			<img class="img1" ng-src="../views/movieMsgImages/{{moviesInformation.src}}.png">
+			<article>{{moviesInformation.information}}</article>
+		</section>
+		<div class="usersView">
+			<h1>网友评论:</h1>
+			<% if(locals.user) { %>
+				<div class="usersView_form">
+					<form name="usersView">
+						<p><textarea class="usersView_des" ng-model="usersView.des"
+							ng-maxlength='100'
+							name="usersViewDes placeholder="说点什么... ..."></textarea></p>
+						<span class="usersView_error" 
+							ng-show="usersView.usersViewDes.$invalid">字数不能超过100字</span>
+						<button class="usersView_button" type="button"
+							 ng-click="sendView(usersView,'<%=locals.user.name%>')">
+							提交
+						</button>
+					</form>
+				</div>
+			<% } else{ %>
+				<div class="usersView_form">
+					<form name="usersView">
+						<p><div class="usersView_des">
+							<a href="/sign" class="usersView_des_button">
+								您需要登陆才能评论(点击此处登陆)
+							</a>
+						</div></p>
+						<button class="usersView_button" ng-click="sendView(usersView)"
+							ng-disabled="true">提交</button>
+					</form>
+				</div>
+			<% } %>
+			<div class="usersView_show">
+				<div class="usersView_chip" ng-repeat="review in reviews ">
+					<span class="usersView_chip_name">
+						{{review.name}}
+					</span>
+					<span class="usersView_chip_des">
+						{{review.des}}
+					</span>
+					<span class="usersView_chip_date">
+						{{review.time}}
+					</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

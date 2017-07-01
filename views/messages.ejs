@@ -1,0 +1,6 @@
+<% if(locals.messages) { %>
+	<% messages.forEach(function(message){  %>
+		<span class="serverError" ng-hide="register.registerName.$dirty"><%= message.msg %></span>
+	<% })  %>
+	<% removeMessages() %>
+<% }  %>

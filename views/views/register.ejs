@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="register">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<link rel="stylesheet" href="views/css/reset.css" />
+		<link rel="stylesheet" href="views/css/register.css" />
+		<script type="text/javascript" src="views/js/angular.js"></script>
+		<script type="text/javascript" src="views/js/angular-resource.js" ></script>
+		<script>
+			angular.module('register', ['ngResource'])
+				.constant('baseurlForUser', 'http://localhost:3000/register')
+				.controller('registerCtrl', function($scope,$window,
+					$http,$resource,$location, baseurlForUser) {
+
+					$scope.registerSend = function(infor) {
+						$http.post(baseurlForUser,infor).success(function(test){
+							console.log(test)
+						}).error(function(){
+							console.log(2)
+						})
+					}
+					
+					$scope.resett = function() {
+						$scope.log.name = '';
+						$scope.log.password = '';
+						$scope.log.passwordAgain = '';
+					}
+				})
+		</script>
+	</head>
+
+	<body ng-controller="registerCtrl">
+		<div class="registerBox">
+			<h1 class="registerBox_title">Join Us</h1>
+			<form name="register" class="registerBox_form" action="/register" method="post">
+				<div><label>名称(登陆帐号)</label></div>
+				<p><input name="registerName" ng-model="data.name"
+					 ng-minlength="4" ng-maxlength="10" required="required"
+					  placeholder="取个响亮的名字吧">
+					<% include ../messages  %>
+					<span class="error" ng-show="register.registerName.$dirty
+						&&register.registerName.$invalid">
+						名字在4到10位
+					</span>
+				</p>
+				<div><label>密码</label></div>
+				<p><input type="password" name="registerPassword"
+					 ng-model="data.password" ng-minlength="6" ng-maxlength="18" 
+					 required="required" placeholder="请输入密码">
+					<span class="error" ng-show="register.registerPassword.$dirty
+						&&register.registerPassword.$invalid">
+						密码在6到18位
+					</span>
+				</p>
+				<div><label>确认密码</label></div>
+				<p><input type="password" name="registerPasswordAgain"
+					 ng-model="data.passwordAgain" ng-minlength="6" ng-maxlength="18"
+					  required="required" placeholder="确认密码">
+					<span class="success" ng-show="data.passwordAgain
+						&&data.password==data.passwordAgain">密码一致</span>
+					<span class="error" ng-show="register.registerPasswordAgain.$dirty&&
+						data.password!=data.passwordAgain">
+						密码不一致
+					</span>
+				</p>
+				<button type="submit" class="registerBox_form_register"
+					 ng-disabled="register.$invalid" >注册</button>
+				<button type="button" class="registerBox_form_reset"
+					 ng-click="resett()">重置</button>
+			</form>
+		</div>
+	</body>
+
+</html>

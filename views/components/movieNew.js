@@ -1,0 +1,11 @@
+angular.module('homepage')
+.constant('moviesNew','http://localhost:3000/api/agent/moviesAllSettingNew/')
+.directive('movieNew',function($resource,moviesNew){
+	return{
+		link:function(scope,element,attrs){
+			scope.moviesNewResource=$resource(moviesNew)
+			scope.movies=scope.moviesNewResource.query()
+		},
+		templateUrl:'views/components/templates/movieNew.ejs'
+	}
+})

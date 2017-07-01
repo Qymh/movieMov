@@ -1,0 +1,137 @@
+@import url(reset.css);
+body {
+  background-color: whitesmoke;
+  background-image: url(../movieChipImages/nidemingzi4.jpg);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+nav {
+  width: 100%;
+  height: 50px;
+  background-color: darkslateblue;
+  position: fixed;
+  z-index: 100;
+}
+nav .logo {
+  text-decoration: none;
+  position: absolute;
+  left: 20px;
+  line-height: 50px;
+  color: white;
+  cursor: pointer;
+  box-align: center;
+}
+nav .nav_ul {
+  position: absolute;
+  left: 100px;
+}
+nav .nav_ul li {
+  line-height: 50px;
+  height: 50px;
+  width: 70px;
+  text-align: center;
+  margin-left: 10px;
+  float: left;
+  cursor: pointer;
+}
+nav .nav_ul li:hover {
+  background-color: deepskyblue;
+  transition: all 0.2s ease-in-out;
+}
+nav .nav_ul a {
+  text-decoration: none;
+  color: linen;
+}
+
+.skyDriveBox {
+  position: absolute;
+  top: 100px;
+  width: 952px;
+}
+.skyDriveBox_attention {
+  position: absolute;
+  height: 180px;
+  width: 33%;
+  right: 0px;
+  top: 0px;
+  background-color: white;
+  border-radius: 5px;
+}
+.skyDriveBox_attention h1 {
+  padding-left: 20px;
+  font-size: 15px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  background-color: pink;
+}
+.skyDriveBox_attention .weixin {
+  height: 130px;
+  width: 130px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.skyDriveBox_attention .weibo {
+  height: 130px;
+  width: 130px;
+  margin-top: -10px;
+  margin-left: 20px;
+}
+.skyDriveBox_information {
+  width: 65%;
+  padding-bottom: 50px;
+  background-color: white;
+}
+.skyDriveBox_information_name {
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 30px;
+  padding-left: 20px;
+}
+.skyDriveBox_information_time {
+  margin-top: 20px;
+  width: 95%;
+  height: 20px;
+  left: 2.5%;
+  background-color: #eee;
+  line-height: 20px;
+  position: relative;
+}
+.skyDriveBox_information_time span {
+  position: absolute;
+  right: 0;
+}
+.skyDriveBox_information_recommend {
+  font-size: 20px;
+  font-weight: bold;
+  width: 90%;
+  margin-top: 10px;
+  line-height: 40px;
+  margin-left: 10%;
+}
+.skyDriveBox_information_main {
+  font-size: 20px;
+  font-weight: bold;
+  width: 90%;
+  margin-top: 10px;
+  line-height: 40px;
+  margin-left: 10%;
+  color: red;
+}
+.skyDriveBox_information_baidu {
+  font-size: 20px;
+  font-weight: bold;
+  width: 90%;
+  margin-top: 10px;
+  line-height: 40px;
+  margin-left: 10%;
+}
+.skyDriveBox_information_baidu a {
+  text-decoration: none;
+}
+.skyDriveBox_information_baidu a span {
+  color: black;
+}
+
+/*# sourceMappingURL=moviesSkyDriveOnce.css.map */

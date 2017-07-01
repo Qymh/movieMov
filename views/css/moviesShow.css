@@ -1,0 +1,258 @@
+body {
+  background-color: #eee;
+  background-image: url(../movieChipImages/nidemingzi4.jpg);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  height: 2000px;
+}
+
+nav {
+  width: 100%;
+  height: 50px;
+  background-color: darkslateblue;
+  position: fixed;
+  z-index: 100;
+}
+nav .logo {
+  text-decoration: none;
+  position: absolute;
+  left: 20px;
+  line-height: 50px;
+  color: white;
+  cursor: pointer;
+  box-align: center;
+}
+nav .nav_ul {
+  position: absolute;
+  left: 100px;
+}
+nav .nav_ul li {
+  line-height: 50px;
+  height: 50px;
+  width: 70px;
+  text-align: center;
+  margin-left: 10px;
+  float: left;
+  cursor: pointer;
+}
+nav .nav_ul li:hover {
+  background-color: deepskyblue;
+  transition: all 0.2s ease-in-out;
+}
+nav .nav_ul a {
+  text-decoration: none;
+  color: linen;
+}
+nav div {
+  position: absolute;
+  left: 530px;
+  margin-top: 7px;
+}
+nav .search {
+  position: absolute;
+  top: 45px;
+  width: 214px;
+  border: 1px solid #ddd;
+  background: white;
+}
+nav .search li {
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  font-size: 15 px;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+nav .search li:hover {
+  transition: all 0.2s ease-in-out;
+  color: white;
+  background-color: deeppink;
+}
+nav input {
+  height: 30px;
+  width: 200px;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+nav .button {
+  position: absolute;
+  left: 750px;
+  text-align: center;
+  height: 36px;
+  line-height: 36px;
+  width: 36px;
+  margin-top: 7px;
+  background-color: deepskyblue;
+  padding: 0px 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.moviesBox {
+  position: absolute;
+  top: 100px;
+  width: 952px;
+  height: 2000px;
+}
+
+.moviesChip {
+  margin-top: 10px;
+  height: 280px;
+  width: 65%;
+  position: relative;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: white;
+  opacity: 0.8;
+}
+.moviesChip_attention {
+  position: absolute;
+  height: 180px;
+  width: 33%;
+  right: 0px;
+  background-color: white;
+}
+.moviesChip_attention h1 {
+  padding-left: 20px;
+  font-size: 15px;
+  height: 30px;
+  line-height: 30px;
+  background-color: whitesmoke;
+}
+.moviesChip_attention .weixin {
+  height: 130px;
+  width: 130px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.moviesChip_attention .weibo {
+  height: 130px;
+  width: 130px;
+  margin-top: -10px;
+  margin-left: 20px;
+}
+.moviesChip_img {
+  position: absolute;
+  top: 45px;
+  left: 15px;
+  height: 190px;
+  width: 150px;
+  cursor: pointer;
+}
+.moviesChip_title {
+  cursor: pointer;
+  position: absolute;
+  left: 180px;
+  top: 45px;
+  color: black;
+  font-size: 25px;
+}
+.moviesChip_title a {
+  text-decoration: none;
+}
+.moviesChip_title a:visited {
+  color: black;
+}
+.moviesChip_title a:link {
+  color: black;
+}
+.moviesChip_title a:hover {
+  color: deeppink;
+}
+.moviesChip_actor {
+  position: absolute;
+  font-size: 15px;
+  left: 180px;
+  top: 85px;
+  color: brown;
+}
+.moviesChip_description {
+  position: absolute;
+  font-size: 15px;
+  line-height: 25px;
+  top: 110px;
+  left: 180px;
+  color: #666;
+}
+.moviesChip_grade {
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  font-size: 15px;
+}
+.moviesChip_grade > span {
+  margin-left: 5px;
+}
+.moviesChip_grade span:nth-child(1) {
+  color: lawngreen;
+}
+.moviesChip_grade span:nth-child(2) {
+  color: brown;
+}
+.moviesChip_button {
+  position: absolute;
+  bottom: 20px;
+  left: 180px;
+}
+.moviesChip_button > span {
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid gainsboro;
+  border-radius: 50%;
+  color: #666;
+  margin-left: 5px;
+}
+.moviesChip_button > span:hover {
+  transition: all 0.2s ease-in-out;
+  border-color: deepskyblue;
+}
+.moviesChip_date {
+  position: absolute;
+  bottom: 22px;
+  font-size: 15px;
+  color: #666;
+  right: 70px;
+}
+.moviesChip_collect {
+  position: absolute;
+  bottom: 22px;
+  right: 20px;
+  font-size: 15px;
+  color: dodgerblue;
+  cursor: pointer;
+}
+.moviesChip_counter {
+  position: absolute;
+  font-size: 20px;
+  width: 330px;
+  height: 50px;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding-left: 20px;
+  margin-top: 10px;
+  left: 23%;
+}
+.moviesChip_counter > span {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.moviesChip_counter > span:hover {
+  transition: all 0.2s ease-in-out;
+  color: white;
+  background-color: deeppink;
+}
+.moviesChip_counter_name {
+  background-color: deeppink;
+  color: white;
+}
+
+/*# sourceMappingURL=moviesShow.css.map */

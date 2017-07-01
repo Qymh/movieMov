@@ -1,0 +1,158 @@
+body {
+  background-color: #eee;
+  background-image: url(../movieChipImages/nidemingzi4.jpg);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+nav {
+  width: 100%;
+  height: 50px;
+  background-color: darkslateblue;
+  position: fixed;
+  z-index: 100;
+}
+nav .logo {
+  text-decoration: none;
+  position: absolute;
+  left: 20px;
+  line-height: 50px;
+  color: white;
+  cursor: pointer;
+  box-align: center;
+}
+nav .nav_ul {
+  position: absolute;
+  left: 100px;
+}
+nav .nav_ul li {
+  line-height: 50px;
+  height: 50px;
+  width: 70px;
+  text-align: center;
+  margin-left: 10px;
+  float: left;
+  cursor: pointer;
+}
+nav .nav_ul li:hover {
+  background-color: deepskyblue;
+  transition: all 0.2s ease-in-out;
+}
+nav .nav_ul a {
+  text-decoration: none;
+  color: linen;
+}
+
+.movieBox {
+  position: absolute;
+  width: 952px;
+  top: 100px;
+  opacity: 0.8;
+}
+.movieBox_attention {
+  position: absolute;
+  height: 180px;
+  width: 33%;
+  right: 0px;
+  top: 0px;
+  background-color: white;
+  border-radius: 5px;
+}
+.movieBox_attention h1 {
+  padding-left: 20px;
+  font-size: 15px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+.movieBox_attention .weixin {
+  height: 130px;
+  width: 130px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.movieBox_attention .weibo {
+  height: 130px;
+  width: 130px;
+  margin-top: -10px;
+  margin-left: 20px;
+}
+
+.movieInformation {
+  border-radius: 5px;
+  width: 65%;
+  min-height: 800px;
+  background-color: white;
+}
+.movieInformation_title {
+  padding-top: 20px;
+  margin-left: 20px;
+  font-size: 25px;
+}
+.movieInformation_title:hover {
+  transition: all 0.2s ease-in-out;
+  color: deepskyblue;
+}
+.movieInformation_uptime {
+  font-size: 10px;
+  color: #666;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.movieInformation_description {
+  margin-top: 20px;
+  margin-left: 25px;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #666;
+  line-height: 25px;
+}
+.movieInformation_director, .movieInformation_scriptwriter, .movieInformation_actor, .movieInformation_type, .movieInformation_country, .movieInformation_language, .movieInformation_date, .movieInformation_time {
+  margin-left: 20px;
+  letter-spacing: 3px;
+  opacity: 0.8;
+  line-height: 25px;
+}
+.movieInformation_director {
+  margin-top: 40px;
+}
+.movieInformation_poster {
+  height: 600px;
+  width: 90%;
+  margin-top: 20px;
+  margin-left: 5%;
+}
+.movieInformation_method {
+  margin-top: 20px;
+  margin-left: 10px;
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+.movieInformation_xunlei, .movieInformation_baidu {
+  margin-top: 30px;
+  margin-left: 20px;
+  padding-bottom: 150px;
+}
+.movieInformation_xuelei p, .movieInformation_baidu p {
+  margin-bottom: 30px;
+}
+.movieInformation_xuelei a, .movieInformation_baidu a {
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 20px;
+  color: purple;
+}
+.movieInformation_method {
+  margin-top: 20px;
+  margin-left: 10px;
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+.movieInformation_mothodTwo {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=movie.css.map */

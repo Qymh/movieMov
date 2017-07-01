@@ -1,0 +1,33 @@
+<div class="movieBox">
+	<div class="movieInformation">
+		<h1 class="movieInformation_title">{{movie.name}}</h1>
+		<p class="movieInformation_uptime">{{movie.uptime}}</p>
+		<p class="movieInformation_description">{{movie.des}}</p>
+		<p class="movieInformation_director">导演 : {{movie.director|forChange}}</p>
+		<p class="movieInformation_scriptwriter">编剧 : {{movie.scriptwriter|forChange}}</p>
+		<p class="movieInformation_actor">主演 : {{movie.actor}}</p>
+		<p class="movieInformation_type">类型 : {{movie.type|forChange}}</p>
+		<p class="movieInformation_country">制片国家地区 : {{movie.country|forChange}}</p>
+		<p class="movieInformation_language">语言 : {{movie.language|forChange}}</p>
+		<p class="movieInformation_date">上映时间 : {{movie.date}}</p>
+		<p class="movieInformation_time">影片时长 : {{movie.time}}</p>
+		<img class="movieInformation_poster" ng-src=../views/movieChipImages/{{movie.src}}.png>
+		<p class="movieInformation_method">下载方法</p>
+		<div class="movieInformation_xunlei">
+			<p ng-repeat="xunlei in movie.xunlei">
+				<a href="{{xunlei.href}}">{{movie.name}}--迅雷下载</a>
+			</p>
+		</div>
+		<p class="movieInformation_methodTwo">百度云盘下载地址:</p>
+		<div class="movieInformation_baidu">
+			<p ng-repeat="baidu in movieAll.baidu">
+				<a href="{{baidu.href}}">{{movie.name}}</a>
+			</p>
+		</div>
+	</div>
+	<div class="movieBox_attention">
+		<h1>关注微信微博</h1>
+		<img class="weixin">
+		<img class="weibo">
+	</div>
+</div>

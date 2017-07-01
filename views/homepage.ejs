@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="homepage">
+	<head>
+		<meta charset="UTF-8">
+		<title>人生05网</title>
+		<link rel="stylesheet" href="views/css/reset.css" />
+		<link rel="stylesheet" href="views/css/homepage.css" />
+		<script type="text/javascript" src="views/js/angular.js" ></script>
+		<script type="text/javascript" src="views/js/angular-resource.js" ></script>
+		<script type="text/javascript" src="views/js/angular-route.js" ></script>
+		<script type="text/javascript" src="views/js/angular-animate.js" ></script>
+		<script> 
+			angular.module('homepage',['myFilter','homepageCtrl'
+			,'ngResource','ngRoute','navSearch','ngAnimate'])
+		</script>
+		<script type="text/javascript" src="views/controllers/homepageCtrl.js" ></script>
+		<script type="text/javascript" src="views/components/navSearch.js" ></script>
+		<script type="text/javascript" src="views/components/movieNew.js" ></script>
+		<script type="text/javascript" src="views/components/movieMsg.js" ></script>
+		<script type="text/javascript" src="views/filters/movieChipFilter.js" ></script>
+	</head>
+	<body>
+		<body ng-controller="homepageCtrl">
+		<nav class="nav">
+			<a target="_self" href="/" class="logo"><span>人生05</span></a>
+			<ul class="nav_ul">
+				<a target="_blank" href="{{nav.href}}" ng-repeat="nav in navs">
+					<li>
+						{{nav.name}}
+					</li>
+				</a>
+			</ul>
+			<div nav-search ng-keydown='searchKeyDown($event)'>
+			</div>
+			<span class="button" ng-click="searchButton()">搜索</button>
+		</nav>
+		<section class="users">
+			<% include menu %>
+			<ul class="users_details">
+				<a>
+					<li ng-repeat="user in usersDetails">
+						{{user.name}}
+					</li>
+				</a>
+			</ul>
+		</section>
+		<section class="movieMsg">
+			<div movie-msg information-total="<%= total %>">
+			</div>
+		</section>
+		<section class="movieNew">
+			<div movie-new ></div>
+		</section>
+	</body>
+	</body>
+</html>

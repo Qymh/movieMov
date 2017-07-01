@@ -1,0 +1,82 @@
+body{
+	background-color: #eee;
+	background-image:url(../movieChipImages/nidemingzi4.jpg);
+	background-size:100% 100%;
+	background-attachment: fixed;
+}
+nav {
+	width: 100%;
+	height: 50px;
+	background-color: darkslateblue;
+	position: fixed;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+}
+
+nav .logo {
+	text-decoration: none;
+	position: absolute;
+	left: 20px;
+	color: white;
+	cursor: pointer;
+}
+
+nav .nav-ul {
+	position: absolute;
+	left: 100px;
+}
+
+nav .nav-ul li {
+	line-height: 50px;
+	height: 50px;
+	width: 70px;
+	text-align: center;
+	margin-left: 10px;
+	float: left;
+	cursor: pointer;
+}
+
+nav .nav-ul a {
+	text-decoration: none;
+	color: linen;
+}
+
+nav .nav-ul li:hover {
+	background-color: deepskyblue;
+	transition: all 0.2s ease-in-out;
+}
+
+nav div {
+	position: absolute;
+	left: 530px;
+}
+.error{
+	position:absolute;
+	height: 300px;
+	width: 300px;
+	top: 150px;
+	left: 150px;
+}
+.error p{
+	font-size: 50px;
+	line-height: 70px;
+	color:deeppink;
+	margin-top: 30px;
+}
+.error a{
+	color:deeppink;
+	text-decoration: none;
+	font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+

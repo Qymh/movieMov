@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="skyDriveOnce">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../views/css/moviesSkyDriveOnce.css" />
+		<script src="../views/js/angular.js"></script>
+		<script type="text/javascript" src="../views/js/angular-resource.js" ></script>
+		<script>
+			angular.module('skyDriveOnce',['ngResource'])
+			.constant('skyDriveOnce','http://localhost:3000/api/agent/moviesSkyDriveOnce/')
+			.controller('skyDriveCtrl',function($scope,$resource,$location,skyDriveOnce){
+				$scope.navs=[
+					{name:'咨询',href:'#'},
+					{name:'电影',href:'/moviesShow'},
+					{name:'电视剧',href:'#'},
+					{name:'求片区',href:'#'},
+					{name:'网盘区',href:'/moviesSkyDrive'}
+				]
+				
+				var width=document.documentElement.clientWidth||document.body.clientWidth,	// 获取页面宽度
+				designWidth=952,		// 设计时的宽度
+				differ=(parseInt(width)-designWidth)/2,	// 获取当前页面宽度与设计宽度的差值
+				leftPersent=(differ/width)*100+'%'
+				movieBox=document.querySelectorAll('.skyDriveBox')[0],
+				movieBoxEle=angular.element(movieBox)
+			
+				movieBoxEle.attr('style','left:'+leftPersent)
+				
+				var absurl=$location.absUrl()
+				var count=absurl.match(/\/\d+/g)[0].match(/\d+/g)[0]
+				
+				// 获取网盘resource
+				$scope.skyDriveOnceResource=$resource(skyDriveOnce+count)
+				
+				$scope.skyDriveOnceResource.query().$promise.then(function(data){
+					$scope.skyDriveOnce=data[0]
+					console.log($scope.skyDriveOnce)
+				})
+				
+				
+			})
+		</script>
+	</head>
+	<body ng-controller="skyDriveCtrl">
+		<nav class="nav">
+			<a target="_self" href="/" class="logo"><span>人生05</span></a>
+			<ul class="nav_ul">
+				<a target="_blank" href="{{nav.href}}" ng-repeat="nav in navs">
+					<li>
+						{{nav.name}}
+					</li>
+				</a>
+			</ul>
+		</nav>
+		<div class="skyDriveBox">
+			<div class="skyDriveBox_information">
+				<p class="skyDriveBox_information_name">
+					{{skyDriveOnce.name}}
+				</p>
+				<p class="skyDriveBox_information_time">
+					<span>{{skyDriveOnce.time}}</span>
+				</p>
+				<p class="skyDriveBox_information_recommend">
+					随时获取更多免费屏蔽的资源，关注GirlMovies的
+				</p>
+				<p class="skyDriveBox_information_main">
+					微信订阅号：“怎么还不更新”（ZMHBGX）
+				</p>
+				<p class="skyDriveBox_information_baidu">
+					<a ng-href="{{skyDriveOnce.address}}">
+						<span>[百度云]</span> {{skyDriveOnce.address}}
+					</a>
+					<span>密码: {{skyDriveOnce.password||'无'}} </span>
+				</p>
+			</div>
+			<div class="skyDriveBox_attention">
+				<h1>关注微信微博</h1>
+				<img class="weixin">
+				<img class="weibo">
+			</div>
+		</div>
+	</body>
+</html>

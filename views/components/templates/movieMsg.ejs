@@ -1,0 +1,15 @@
+<div class="movieMsg_once" ng-repeat="movie in movieMsg">
+	<img ng-src=views/movieMsgImages/{{movie.src}}.png >
+	<a target="_blank" ng-href=moviePress/{{movie.src}}>
+		<h1 class="movieMsg_title">{{movie.title}}</h1>
+	</a>
+	<p class="movieMsg_description">{{movie.des}}</p>
+	<p class="movieMsg_usersView">
+		<span>{{movie.name||'暂无评论'}}:</span>
+		<span>{{movie.view||'发表你的看法'}}</span>
+	</p>
+</div>
+<div class="movieMsg_count">
+	<span ng-repeat="count in counts" ng-click="show(count,$event)"
+		ng-class="count==1 ? 'movieMsg_count_focus':''">{{count}}</span>
+</div>

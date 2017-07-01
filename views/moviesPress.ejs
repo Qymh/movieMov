@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html ng-app="moviesAllSetting">
+	<head>
+		<meta charset="UTF-8">
+		<title>moviesAllSetting</title>
+		<link rel="stylesheet" href="/public/css/moviesAll.css" />
+		<script type="text/javascript" src="/public/js/angular.js" ></script>
+		<script type="text/javascript" src="/public/js/angular-resource.js" ></script>
+		<script>
+			angular.module('moviesAllSetting',['ngResource'])
+			.constant('moviesAll','http://localhost:3000/api/agent/moviesPress/')
+			.constant('moviesAllProperty','http://localhost:3000/api/agent/moviesPressProperty/')
+			.controller('moviesAll',function($scope,$element,$resource,$http,$log
+				,moviesAll,moviesAllProperty){
+					
+				$scope.data={
+					msg:''
+				}
+				
+				$scope.moviesAllResource=$resource(moviesAll)
+				
+				$scope.moviesAllPropertyResource=$resource(moviesAllProperty)
+				
+				$scope.property=$scope.moviesAllPropertyResource.query()
+				
+				// 添加属性
+				$scope.sendPro=function(msg){
+					
+					/*
+					var inputEle=angular.element('<input>')
+					var form=document.getElementsByClassName('moviesAllSetting_form')[0]
+					var formEle=angular.element(form)
+					var labelEle=angular.element('<label>')
+					var pEle=angular.element('<p>')
+					
+					labelEle.text(msg)
+					inputEle.attr('name','product['+msg+']')
+					
+					pEle.append(labelEle)
+					pEle.append(inputEle)
+					formEle.append(pEle)
+					*/
+					
+					var data={
+						property:msg
+					}
+					
+					new $scope.moviesAllPropertyResource(data).$save().then(function(){
+						$scope.property.push({
+							property:msg
+						})
+					})
+					
+				}
+				
+				// 删除属性
+				$scope.deletePro=function(msg){
+					
+					$scope.delMoviesAllPropertyResource=$resource(moviesAllProperty+msg)
+					
+					$scope.delMoviesAllPropertyResource.delete()
+					
+					$scope.property.forEach(function(item,index){
+						if(item.property==msg){
+							$scope.property.splice(index,1)
+						}
+					})
+				}
+				
+				// 修改报刊
+				$scope.putMovies=function(property,count,e){
+					var value=e.target.innerHTML
+					
+					var data={
+						property:property,
+						value:value,
+						count:count
+					}
+					
+					$scope.putMoviesAllResource=$resource(moviesAll+":property",{property:'@property'},{save:{method:'PUT'}})
+					
+					$scope.putMoviesAllResource.save(data)
+					
+					//$http.put(moviesAll+property,data)
+				}
+			})
+		</script>
+	</head>
+	<body ng-controller="moviesAll">
+		<h1 class="title">电影报刊数据管理</h1>
+		<div class="moviesAllSetting">
+			<form class="moviesAllSetting_form" action="/api/agent/moviesPress" method="post">
+				<p class="moviesAllSetting_form_add">
+					<label>需要添加的属性</label>
+					<input placeholder="属性名称" ng-model="data.msg">
+					<span ng-click="sendPro(data.msg)">提交</span>
+				</p>
+				<p class="moviesAllSetting_form_property" ng-repeat="item in property.slice().reverse()">
+					<label>{{item.property}}</label>
+					<input placeholder="{{item.property}}"
+					 name="{{item.property}}">
+					 <span ng-click="deletePro(item.property)">删除</span>
+				</p>
+				<button>send</button>
+			</form>
+			<table class="moviesAllSetting_table">
+				<tr>
+					<% for(var key in moviesPress[0]) { %>
+						<th><%= key %></th>
+					<% } %>
+				</tr>
+				<% for(var i in moviesPress) { %>
+					<tr>
+						<% for(var j in moviesPress[i]) { %>
+							<td  ng-blur="putMovies('<%=j%>','<%=i%>',$event)"
+								contentEditable="true"><%= moviesPress[i][j] %></td>
+						<% } %>
+					</tr>
+				<% } %>
+			</table>
+		</div>
+	</body>
+</html>

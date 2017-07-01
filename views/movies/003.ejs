@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="movie">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../views/css/reset.css" />
+		<link rel="stylesheet" href="../views/css/movie.css" />
+		<script type="text/javascript" src="../views/js/angular.js" ></script>
+		<script type="text/javascript" src="../views/js/angular-resource.js" ></script>
+		<script>
+			angular.module('movie',['movieTemplate','movieFilter','ngResource'])
+			.controller('movieCtrl',function($scope){
+				$scope.navs=[
+					{name:'咨询',href:'#'},
+					{name:'电影',href:'/moviesShow'},
+					{name:'电视剧',href:'#'},
+					{name:'求片区',href:'#'},
+					{name:'更多+',href:'#'}
+				];
+			})
+		</script>
+		<script type="text/javascript" src="../views/components/movie.js" ></script>
+		<script type="text/javascript" src="../views/filters/movieFilter.js" ></script>
+	</head>
+	<body ng-controller="movieCtrl">
+		<nav class="nav">
+			<a target="_self" href="/" class="logo"><span>人生05</span></a>
+			<ul class="nav_ul">
+				<a target="_blank" href="{{nav.href}}" ng-repeat="nav in navs">
+					<li>
+						{{nav.name}}
+					</li>
+				</a>
+			</ul>
+		</nav>
+		<div my-movie></div>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="noMovie">
+	<head>
+		<meta charset="UTF-8">
+		<title>404</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/noMovie.css" />
+		<script type="text/javascript" src="js/angular.js" ></script>
+		<script>
+			angular.module('noMovie',[])
+		</script>
+		<script type="text/javascript" src="controllers/noMovieCtrl.js" ></script>
+	</head>
+	<body ng-controller="noMovieCtrl">
+		<nav class="nav">
+			<a target="_self" href="homepage.ejs" class="logo"><span>人生05</span></a>
+			<ul class="nav-ul">
+				<a target="_blank" href="{{nav.href}}" ng-repeat="nav in navs">
+					<li>
+						{{nav.name}}
+					</li>
+				</a>
+			</ul>
+		</nav>
+		<div class="error">
+			<p><span>您访问的电影暂时未添加</span></p>
+			<p><a href="http://127.0.0.1:8020/%E7%94%B5%E5%BD%B1%E7%BD%91%E7%AB%991/movieShow.ejs">
+				点击这里可以重新搜索
+			</a></p>
+		</div>
+	</body>
+</html>

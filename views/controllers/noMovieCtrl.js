@@ -1,0 +1,10 @@
+angular.module('noMovie')
+.controller('noMovieCtrl',function($scope){
+	$scope.navs=[
+		{name:'咨询',href:'#'},
+		{name:'电影',href:'movieShow.ejs'},
+		{name:'电视剧',href:'#'},
+		{name:'求片区',href:'#'},
+		{name:'更多+',href:'#'}
+	]
+})

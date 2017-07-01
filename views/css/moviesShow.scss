@@ -1,0 +1,303 @@
+body{
+    background-color: #eee;
+    background-image:url(../movieChipImages/nidemingzi4.jpg);
+    background-size:100% 100%;
+    background-attachment: fixed;
+    height:2000px;
+}
+
+$w: 1360px;
+$h: 662px;
+
+@function w($px){
+    @return $px/$w*100%;
+}
+
+@function h($px){
+    @return $px/$h*100%;
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: darkslateblue;
+    position: fixed;
+    z-index: 100;
+    
+    & .logo{
+        text-decoration: none;
+        position: absolute;
+        left: 20px;
+        line-height: 50px;
+        color: white;
+        cursor: pointer;
+        box-align:center;
+    }
+    
+    & .nav_ul{
+        position: absolute;
+        left: 100px;
+        
+        & li{
+            line-height: 50px;
+            height: 50px;
+            width: 70px;
+            text-align: center;
+            margin-left: 10px;
+            float: left;
+            cursor: pointer;
+            
+            &:hover{
+                background-color: deepskyblue;
+                transition: all 0.2s ease-in-out;
+            }
+        }
+        
+        & a{
+            text-decoration: none;
+            color: linen;
+        }
+    }
+    
+    & div{
+        position: absolute;
+        left: 530px;
+        margin-top: 7px;
+    }
+    
+    & .search{
+        position: absolute;
+        top: 45px;
+        width: 214px;
+        border: 1px solid #ddd;
+        background: white;
+        
+        & li{
+            height: 30px;
+            line-height: 30px;
+            padding-left: 10px;
+            font-size: 15 px;
+            margin-top: 5px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            
+            &:hover{
+                transition: all 0.2s ease-in-out;
+                color: white;
+                background-color: deeppink;
+            }
+        }
+    }
+    
+    & input{
+        height: 30px;
+        width: 200px;
+        border-radius: 5px;
+        padding-left: 10px;
+    }
+    
+    & .button{
+        position: absolute;
+        left: 750px;
+        text-align: center;
+        height: 36px;
+        line-height: 36px;
+        width: 36px;
+        margin-top: 7px;
+        background-color: deepskyblue;
+        padding: 0px 10px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+.moviesBox{
+    position: absolute;
+    top: 100px;
+    width:952px;
+    height: 2000px;
+}
+
+.moviesChip{
+    margin-top: 10px;
+    height: 280px;
+    width: 65%;
+    position: relative;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: white;
+    opacity: 0.8;
+    
+    &_attention{
+        position: absolute;
+        height: 180px;
+        width: 33%;
+        right: 0px;
+        background-color: white;
+        
+        & h1{
+            padding-left: 20px;
+            font-size: 15px;
+            height: 30px;
+            line-height: 30px;
+            background-color: whitesmoke;
+        }
+        
+        & .weixin{
+            height: 130px;
+            width: 130px;
+            margin-top:10px;
+            margin-left: 10px;
+        }
+        
+        & .weibo{
+            height: 130px;
+            width: 130px;
+            margin-top: -10px;
+            margin-left: 20px;
+        }
+    }
+    
+    &_img{
+        position: absolute;
+        top: 45px;
+        left: 15px;
+        height: 190px;
+        width: 150px;
+        cursor: pointer;
+    }
+    
+    &_title{
+        cursor: pointer;
+        position: absolute;
+        left:180px ;
+        top: 45px;
+        color: black;
+        font-size: 25px;
+        
+        & a{
+            text-decoration: none;
+            
+            &:visited{
+                color: black;
+            }
+            
+            &:link{
+                color:black;
+            }
+            
+            &:hover{
+                color:deeppink;
+            }
+        }
+    }
+    
+    &_actor{
+        position: absolute;
+        font-size: 15px;
+        left:180px;
+        top: 85px;
+        color: brown;
+    }
+    
+    &_description{
+        position: absolute;
+        font-size: 15px;
+        line-height: 25px;
+        top:110px;
+        left: 180px;
+        color: #666;
+    }
+    
+    &_grade{
+        position: absolute;
+        right: 30px;
+        top: 15px;
+        font-size: 15px;
+        &>span{
+            margin-left: 5px;
+        }
+    
+        & span:nth-child(1){
+            color: lawngreen;
+        }
+    
+        & span:nth-child(2){
+            color: brown;
+        }
+    }
+    
+    
+    &_button{
+        position: absolute;
+        bottom: 20px;
+        left:180px;
+        
+        &>span{
+            cursor: pointer;
+            padding: 5px;
+            border: 1px solid gainsboro;
+            border-radius: 50%;
+            color:#666;
+            margin-left: 5px;
+            
+            &:hover{
+                transition: all 0.2s ease-in-out;
+                border-color: deepskyblue;
+            }
+        }
+    }
+    
+    &_date{
+        position: absolute;
+        bottom: 22px;
+        font-size: 15px;
+        color: #666;
+        right: 70px;
+    }
+    
+    &_collect{
+        position: absolute;
+        bottom: 22px;
+        right: 20px;
+        font-size: 15px;
+        color: dodgerblue;
+        cursor: pointer;
+    }
+    
+    &_counter{
+        position: absolute;
+        font-size: 20px;
+        width: 330px;
+        height: 50px;
+        background-color: white;
+        cursor: pointer;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        padding-left: 20px;
+        margin-top: 10px;
+        left: 23%;
+        
+        &>span{
+            cursor: pointer;
+            height: 20px;
+            width: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            
+            &:hover{
+                transition: all 0.2s ease-in-out;
+                color: white;
+                background-color: deeppink;
+            }
+        }
+        
+        &_name{
+            background-color: deeppink;
+            color: white;
+        }
+    }
+}

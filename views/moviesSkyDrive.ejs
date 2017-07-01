@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="moviesSkyDrive">
+	<head>
+		<meta charset="UTF-8">
+		<title>人生05_网盘区</title>
+		<link rel="stylesheet" href="views/css/moviesSkyDrive.css" />
+		<script type="text/javascript" src="views/js/angular.js" ></script>
+		<script type="text/javascript" src="views/js/angular-resource.js" ></script>
+		<script>
+			angular.module('moviesSkyDrive',['moviesSkyDriveCtrl','navSearch'
+			,'ngResource','skyDrive'])
+		</script>
+		<script src="views/controllers/moviesSkyDriveCtrl.js"></script>
+		<script src="views/components/navSearch.js"></script>
+		<script type="text/javascript" src="views/components/moviesSkyDrive.js" ></script>
+	</head>
+	<body ng-controller="moviesSkyDriveCtrl">
+		<nav class="nav">
+			<a target="_self" href="/" class="logo"><span>人生05</span></a>
+			<ul class="nav_ul">
+				<a target="_blank" href="{{nav.href}}" ng-repeat="nav in navs">
+					<li>
+						{{nav.name}}
+					</li>
+				</a>
+			</ul>
+			<div nav-search ng-keydown='searchKeyDown($event)'>
+			</div>
+			<span class="button" ng-click="searchButton()">搜索</button>
+		</nav>
+		<section class="skyDrive">
+			<div sky-drive information-total='<%= total %>'></div>
+		</section>
+	</body>
+</html>

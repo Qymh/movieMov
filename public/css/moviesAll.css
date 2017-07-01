@@ -1,0 +1,130 @@
+@import url(reset.css);
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.moviesAllSetting {
+  height: 500px;
+  width: 100%;
+  margin-top: 20px;
+}
+.moviesAllSetting_form {
+  width: 1000px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background-image: linear-gradient(90deg, #f2f2f2, #fff 2px, #eee 5px, rgba(255, 255, 255, 0.8) 67%);
+}
+.moviesAllSetting_form input {
+  padding: 10px 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #cdcdcd;
+  -webkit-box-shadow: inset 0px 0px 4px #dcdcdc;
+  -moz-box-shadow: inset 0px 0px 4px #dcdcdc;
+  -box-shadow: inset 0px 0px 4px #dcdcdc;
+}
+.moviesAllSetting_form_add {
+  margin-top: 30px;
+  font-size: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.moviesAllSetting_form_add label {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.moviesAllSetting_form_add span {
+  margin-left: 20px;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  background-color: deepskyblue;
+}
+.moviesAllSetting_form_add span:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-color: deeppink;
+}
+.moviesAllSetting_form_property {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  float: left;
+}
+.moviesAllSetting_form_property label {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.moviesAllSetting_form_property span {
+  margin-left: 20px;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  background-color: deepskyblue;
+}
+.moviesAllSetting_form_property span:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-color: deeppink;
+}
+.moviesAllSetting_form button {
+  height: 50px;
+  width: 50px;
+  color: white;
+  cursor: pointer;
+  display: block;
+  background-color: deepskyblue;
+  margin-top: 50px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  border: 0;
+  clear: both;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+.moviesAllSetting_form button:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-color: deeppink;
+}
+.moviesAllSetting_table {
+  margin-top: 50px;
+  overflow: scroll;
+  width: 100%;
+}
+.moviesAllSetting_table th, .moviesAllSetting_table td {
+  height: 50px;
+  width: auto;
+  max-width: 100px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  text-align: center;
+  line-height: 50px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.moviesAllSetting_table th {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=moviesAll.css.map */

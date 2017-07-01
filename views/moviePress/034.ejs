@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html ng-app="movieMsgDetails">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/movieMsgDetails.css" />
+		<script type="text/javascript" src="../js/angular.js" ></script>
+		<script type="text/javascript" src="../js/angular-resource.js" ></script>
+		<script>
+			angular.module('movieMsgDetails',['ngResource'])
+			.constant('baseurlForMovie','http://localhost:5500/moviemsg/')
+			.constant('baseurlForUsersView','http://localhost:5500/usersview')
+			.controller('movieMsgDetailsCtrl',function($scope,$element,$location,
+				$resource,baseurlForMovie,$filter,baseurlForUsersView){
+				console.log(baseurlForMovie)
+				$scope.navs=[
+					{name:'咨询',href:'#'},
+					{name:'电影',href:'../movieShow.html'},
+					{name:'电视剧',href:'#'},
+					{name:'求片区',href:'#'},
+					{name:'更多+',href:'#'}
+				];
+				
+				var index=$location.absUrl().indexOf('movieMsgDetails');
+				var len=$location.absUrl().length;
+				var test=$location.absUrl().substr(index);
+				index=test.indexOf('/')+1;
+				var src=test.substr(index,3);
+				
+				$scope.movieMsgDetailsResource=$resource(baseurlForMovie);
+				
+				$scope.movieMsgDetails=$scope.movieMsgDetailsResource.query();
+				
+				$scope.usersViewResource=$resource(baseurlForUsersView);
+				
+				$scope.usersViewAll=$scope.usersViewResource.query();
+				
+				var resultsss=[];
+				
+				$scope.usersViewAll.$promise.then(function(data){
+					data.forEach(function(index){
+						if(index.href==src){
+							resultsss.push(index);
+						}
+					})
+					$scope.usersViewAll=resultsss;
+				})
+				
+				$scope.movieMsgDetails.$promise.then(function(data){
+					$scope.movieMsgDetails.forEach(function(index,count){
+						if(index.src==src){
+							$scope.movieMsgDetails=data[count];
+						}
+					})
+					$element.parent().find('title').text($scope.movieMsgDetails.title)
+				})
+				
+				$scope.sendView=function(usersView){
+					if(!angular.isDefined(usersView['des'])){
+						console.log(1)
+						window.alert('请输入内容');
+						return;
+					}
+					usersView.href=src;
+					var now=new Date();
+					var year=now.getFullYear();
+					var month=now.getMonth()+1;
+					var day=now.getDate();
+					var hour=now.getHours();
+					var minute=now.getMinutes();
+					now=year+'年'+month+'月'+day+'日'+hour+'点'+minute+'分';
+					usersView.date=now;
+					new $scope.usersViewResource(usersView).$save().then(function(newView){
+						$scope.usersViewAll.push(newView);
+					})
+					
+					
+					var height=document.defaultView.getComputedStyle(document.body).height;
+					height=parseInt(height);
+					document.body.scrollTop=height;
+				}
+				
+				$element.on('keydown',function(e){
+					if(e.keyCode==13){
+						$scope.sendView(usersView);
+					}
+				})
+			})
+			.filter('test',function(){
+				return function(value){
+					return value.split('   ').join('\n\n');
+				}
+			})
+		</script>
+	</head>
+	<body ng-controller="movieMsgDetailsCtrl">
+		<nav class="nav">
+			<a href="../homepage.html" class="logo"><span>人生05</span></a>
+			<ul>
+				<a target="_blank" href="{{nav.href}}" ng-repeat="nav in navs">
+					<li>
+						{{nav.name}}
+					</li>
+				</a>
+			</ul>
+			<input placeholder="电视/电视剧">
+			<span class="button">搜索</button>
+		</nav>
+		<section>
+			<h1>{{movieMsgDetails.title}}</h1>
+			<img class="img1" src=../movieMsgImages/{{movieMsgDetails.src}}.png>
+			<article>{{movieMsgDetails.information|test}}</article>
+		</section>
+		<div class="usersView">
+			<h1>网友评论:</h1>
+			<div class="usersView-form">
+				<form name="usersView">
+					<p><input placeholder="名称" ng-model="usersView.name" 
+						name="usersView-name" class="usersView-name"></p>
+					<p><textarea class="usersView-des" ng-model="usersView.des"
+						name="usersView-des" placeholder="说点什么... ..."></textarea></p>
+					<p class="usersView-button" ng-click="sendView(usersView)"><span>提交</span></p>
+				</form>
+			</div>
+			<div class="usersView-show">
+				<div class="usersView-chip" ng-repeat="user in usersViewAll">
+					<span class="usersView-chip-name">{{user.name||'匿名网友'}}</span>
+					<span class="usersView-chip-des">{{user.des}}</span>
+					<span class="userView-chip-date">{{user.date}}</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

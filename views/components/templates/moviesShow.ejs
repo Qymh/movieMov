@@ -1,0 +1,43 @@
+<div class="moviesChip_attention">
+	<h1>关注微信微博</h1>
+	<img class="weixin">
+	<img class="weibo">
+</div>
+<div class="moviesChip" ng-repeat="movie in moviesShow">
+	<a target="_blank" ng-href='/moviesShow/{{movie.src}}'>
+		<img class="moviesChip_img" ng-src=views/movieChipImages/{{movie.src}}.png>
+	</a>
+	<div class="moviesChip_title">
+		<a ng-href='/moviesShow/{{movie.src}}' target="_blank">
+			<span>电影名:</span>
+			<span class="moviesChip_title_name">{{movie.name}}</span>
+		</a>
+	</div>
+	<div class="moviesChip_actor">
+		<span>主演:</span>
+		<span>{{movie.actor|forActor}}</span>
+	</div>
+	<div class="moviesChip_description">
+		<span>剧情介绍:</span>
+		<span>{{movie.des||'暂无信息'}}</span>
+	</div>
+	<div class="moviesChip_grade">
+		<span>IMBD:{{movie.imbd||'0.0'}}</span>
+		<span>豆瓣:{{movie.douban||'0.0'}}</span>
+	</div>
+	<div class="moviesChip_button">
+		<span ng-repeat="tag in movie.type|forTag" ng-click="showTag(tag)">
+			{{tag}}
+		</span>
+	</div>
+	<div class="moviesChip_date">
+		<span>{{movie.date}}</span>
+	</div>
+	<div class="moviesChip_collect">
+		<span>收藏</span>
+	</div>
+</div>
+<div class="moviesChip_counter">
+	<span ng-repeat="count in counts" ng-click="show(count,$event)">{{count}}</span>
+</div>
+
