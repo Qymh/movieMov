@@ -1,0 +1,10 @@
+{
+	"name":"movieWeb",
+	"version":"0.0.1",
+	"dependencies":{
+		"express":"3.0.0",
+		"ejs":"*",
+		"redis":"0.7.2",
+		"bcrypt-nodejs": "*"
+	}
+}
