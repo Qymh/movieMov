@@ -8,7 +8,7 @@
 		<script type="text/javascript" src="../views/js/angular-resource.js" ></script>
 		<script>
 			angular.module('skyDriveOnce',['ngResource'])
-			.constant('skyDriveOnce','http://localhost:3000/api/agent/moviesSkyDriveOnce/')
+			.constant('skyDriveOnce','/api/agent/moviesSkyDriveOnce/')
 			.controller('skyDriveCtrl',function($scope,$resource,$location,skyDriveOnce){
 				$scope.navs=[
 					{name:'咨询',href:'#'},

@@ -54,7 +54,7 @@ app.get('/moviesNew/:count',moviesShow.showNew)
 // 电影网盘单独界面
 app.get('/moviesSkyDrive/:count',moviesSkyDrive.showNew)
 
-// 电影报刊评论
+// 电影报刊
 app.get('/moviePress/:count',moviePressReview.list)
 
 /*********************************************关于API**********************************************/

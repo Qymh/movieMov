@@ -9,9 +9,9 @@ angular.module('moviesShow')
 			link:function(scope,element,attrs){
 				scope.page=1	// 当前页数
 	
-				scope.moviesShowResource=$resource(moviesShow+scope.page);	// 电影报刊Resource
+				scope.moviesShowResource=$resource(moviesShow+scope.page);	// 电影Resource
 	
-				scope.moviesShow=scope.moviesShowResource.query();	// 获取电影报刊
+				scope.moviesShow=scope.moviesShowResource.query();	// 获取电影
 				
 				scope.counts=[]	// 所有页数数组
 				

@@ -156,6 +156,7 @@ exports.deleteMoviesAllProperty=function(req,res,next){
 // 获取电影报刊
 exports.getMoviesPress=function(req,res,next){
 	var page=req.session.moviesPressPage=res.locals.moviesPressPage=req.moviesPressPage
+	console.log(page)
 	MoviesPress.getRange(page.from,page.to,function(err,moviesPress){
 		res.json(moviesPress)
 	})

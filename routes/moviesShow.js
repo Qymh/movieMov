@@ -10,7 +10,7 @@ exports.list=function(req,res,next){
 
 exports.show=function(req,res,next){
 	var count=req.params.count
-	res.render('movies/'+count+'.ejs')
+	res.render('movies/movies.ejs')
 }
 
 exports.showNew=function(req,res,next){

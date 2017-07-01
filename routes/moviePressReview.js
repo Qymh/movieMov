@@ -10,7 +10,7 @@ exports.list=function(req,res,next){
 		
 		reviews=reviews
 		
-		res.render('moviePress/'+count+'.ejs',{
+		res.render('moviePress/moviePress.ejs',{
 			reviews:reviews
 		})
 	})
