@@ -48,7 +48,7 @@ nav .nav_ul a {
 
 nav div {
   position: absolute;
-  left: 530px;
+  left: 430px;
 }
 
 nav .search {
@@ -85,7 +85,7 @@ nav input {
 
 nav .button {
   position: absolute;
-  left: 750px;
+  left: 650px;
   text-align: center;
   height: 36px;
   line-height: 36px;

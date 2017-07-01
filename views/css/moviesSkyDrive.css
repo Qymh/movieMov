@@ -10,6 +10,7 @@ nav {
   position: fixed;
   z-index: 100;
 }
+
 nav .logo {
   text-decoration: none;
   position: absolute;
@@ -19,10 +20,12 @@ nav .logo {
   cursor: pointer;
   box-align: center;
 }
+
 nav .nav_ul {
   position: absolute;
   left: 100px;
 }
+
 nav .nav_ul li {
   line-height: 50px;
   height: 50px;
@@ -32,19 +35,23 @@ nav .nav_ul li {
   float: left;
   cursor: pointer;
 }
+
 nav .nav_ul li:hover {
   background-color: deepskyblue;
   transition: all 0.2s ease-in-out;
 }
+
 nav .nav_ul a {
   text-decoration: none;
   color: linen;
 }
+
 nav div {
   position: absolute;
-  left: 530px;
+  left: 430px;
   margin-top: 7px;
 }
+
 nav .search {
   position: absolute;
   top: 45px;
@@ -52,6 +59,7 @@ nav .search {
   border: 1px solid #ddd;
   background: white;
 }
+
 nav .search li {
   height: 30px;
   line-height: 30px;
@@ -62,20 +70,23 @@ nav .search li {
   border-bottom: 1px solid #eee;
   cursor: pointer;
 }
+
 nav .search li:hover {
   transition: all 0.2s ease-in-out;
   color: white;
   background-color: deeppink;
 }
+
 nav input {
   height: 30px;
   width: 200px;
   border-radius: 5px;
   padding-left: 10px;
 }
+
 nav .button {
   position: absolute;
-  left: 750px;
+  left: 650px;
   text-align: center;
   height: 36px;
   line-height: 36px;
@@ -95,6 +106,7 @@ nav .button {
   top: 100px;
   height: 2000px;
 }
+
 .skyDrive_search {
   width: 65%;
   height: 50px;
@@ -102,6 +114,7 @@ nav .button {
   box-shadow: 0px 0px 3px #c3c3c4;
   background-color: white;
 }
+
 .skyDrive_search input {
   height: 50%;
   width: 80%;
@@ -111,6 +124,7 @@ nav .button {
   box-shadow: inset 1px 1px 1px #ddd;
   border-radius: 3px;
 }
+
 .skyDrive_search span {
   padding: 4px 10px;
   margin-left: 5px;
@@ -118,10 +132,12 @@ nav .button {
   background-color: deepskyblue;
   cursor: pointer;
 }
+
 .skyDrive_search span:hover {
   background-color: deeppink;
   transition: all 0.2s ease-in-out;
 }
+
 .skyDrive_movies {
   width: 65%;
   height: 50px;
@@ -136,27 +152,34 @@ nav .button {
   text-decoration: none;
   box-sizing: border-box;
 }
+
 .skyDrive_movies:link {
   color: black;
 }
+
 .skyDrive_movies:visited {
   color: black;
 }
+
 .skyDrive_movies:hover {
   color: deeppink;
 }
+
 .skyDrive_movies_name {
   position: absolute;
   left: 20px;
 }
+
 .skyDrive_movies_time {
   position: absolute;
   right: 20px;
 }
+
 .skyDrive_movies:hover {
   box-shadow: inset 0px 0px 15px pink;
   outline: 1px solid pink;
 }
+
 .skyDrive_counter {
   position: absolute;
   font-size: 20px;
@@ -170,6 +193,7 @@ nav .button {
   margin-top: 10px;
   left: 23%;
 }
+
 .skyDrive_counter > span {
   cursor: pointer;
   height: 20px;
@@ -177,15 +201,18 @@ nav .button {
   padding: 10px;
   border-radius: 5px;
 }
+
 .skyDrive_counter > span:hover {
   transition: all 0.2s ease-in-out;
   color: white;
   background-color: deeppink;
 }
+
 .skyDrive_counter_focus {
   background-color: deeppink;
   color: white;
 }
+
 .skyDrive_attention {
   position: absolute;
   height: 180px;
@@ -194,6 +221,7 @@ nav .button {
   top: 0;
   background-color: white;
 }
+
 .skyDrive_attention h1 {
   padding-left: 20px;
   font-size: 15px;
@@ -201,17 +229,17 @@ nav .button {
   line-height: 30px;
   background-color: khaki;
 }
+
 .skyDrive_attention .weixin {
   height: 130px;
   width: 130px;
   margin-top: 10px;
   margin-left: 10px;
 }
+
 .skyDrive_attention .weibo {
   height: 130px;
   width: 130px;
   margin-top: -10px;
   margin-left: 20px;
 }
-
-/*# sourceMappingURL=moviesSkyDrive.css.map */

@@ -13,6 +13,7 @@ nav {
   position: fixed;
   z-index: 100;
 }
+
 nav .logo {
   text-decoration: none;
   position: absolute;
@@ -22,10 +23,12 @@ nav .logo {
   cursor: pointer;
   box-align: center;
 }
+
 nav .nav_ul {
   position: absolute;
   left: 100px;
 }
+
 nav .nav_ul li {
   line-height: 50px;
   height: 50px;
@@ -35,19 +38,23 @@ nav .nav_ul li {
   float: left;
   cursor: pointer;
 }
+
 nav .nav_ul li:hover {
   background-color: deepskyblue;
   transition: all 0.2s ease-in-out;
 }
+
 nav .nav_ul a {
   text-decoration: none;
   color: linen;
 }
+
 nav div {
   position: absolute;
-  left: 530px;
+  left: 430px;
   margin-top: 7px;
 }
+
 nav .search {
   position: absolute;
   top: 45px;
@@ -55,6 +62,7 @@ nav .search {
   border: 1px solid #ddd;
   background: white;
 }
+
 nav .search li {
   height: 30px;
   line-height: 30px;
@@ -65,20 +73,23 @@ nav .search li {
   border-bottom: 1px solid #eee;
   cursor: pointer;
 }
+
 nav .search li:hover {
   transition: all 0.2s ease-in-out;
   color: white;
   background-color: deeppink;
 }
+
 nav input {
   height: 30px;
   width: 200px;
   border-radius: 5px;
   padding-left: 10px;
 }
+
 nav .button {
   position: absolute;
-  left: 750px;
+  left: 650px;
   text-align: center;
   height: 36px;
   line-height: 36px;
@@ -100,6 +111,7 @@ nav .button {
   background-color: white;
   box-shadow: 1px 1px 1px 0px #eee;
 }
+
 .users_photo {
   position: absolute;
   top: 20px;
@@ -113,6 +125,7 @@ nav .button {
   border: 1px solid #666;
   border-radius: 50%;
 }
+
 .users_online {
   font-size: 15px;
   color: #666;
@@ -122,6 +135,7 @@ nav .button {
   top: 90px;
   left: 30%;
 }
+
 .users_sign, .users_log {
   position: absolute;
   height: 30px;
@@ -131,23 +145,27 @@ nav .button {
   text-align: center;
   cursor: pointer;
 }
+
 .users_sign {
   text-decoration: none;
   top: 130px;
   color: white;
   background-color: deepskyblue;
 }
+
 .users_log {
   color: black;
   text-decoration: none;
   background-color: whitesmoke;
   top: 170px;
 }
+
 .users_details {
   position: absolute;
   top: 220px;
   width: 100%;
 }
+
 .users_details li {
   height: 30px;
   line-height: 20px;
@@ -156,9 +174,11 @@ nav .button {
   border-bottom: 1px solid #eee;
   cursor: pointer;
 }
+
 .users_details li:nth-child(2) {
   color: red;
 }
+
 .users_details li:hover {
   transition: all 0.2s ease-in-out;
   color: white;
@@ -171,6 +191,7 @@ nav .button {
   left: 20.84885%;
   width: 78.18317%;
 }
+
 .movieMsg_count {
   position: absolute;
   height: 50px;
@@ -182,20 +203,24 @@ nav .button {
   align-items: center;
   padding-left: 20px;
 }
+
 .movieMsg_count span {
   cursor: pointer;
   padding: 10px;
   border-radius: 5px;
 }
+
 .movieMsg_count span:hover {
   transition: all 0.2s ease-in-out;
   color: white;
   background-color: deeppink;
 }
+
 .movieMsg_count_focus {
   color: white;
   background-color: deeppink;
 }
+
 .movieMsg_once {
   position: relative;
   background-color: white;
@@ -206,10 +231,12 @@ nav .button {
   width: 30.47619%;
   border: 1px solid #666;
 }
+
 .movieMsg_once img {
   width: 100%;
   height: 150px;
 }
+
 .movieMsg_title {
   position: absolute;
   top: 160px;
@@ -222,14 +249,17 @@ nav .button {
   font-weight: bold;
   cursor: pointer;
 }
+
 .movieMsg_title:hover {
   transition: all 0.2s ease-in-out;
   color: deeppink;
 }
+
 .movieMsg_title_name {
   background-color: deeppink;
   color: white;
 }
+
 .movieMsg_description {
   position: absolute;
   left: 3.10559%;
@@ -241,6 +271,7 @@ nav .button {
   line-height: 20px;
   color: #666;
 }
+
 .movieMsg_usersView {
   position: absolute;
   bottom: 20px;
@@ -253,12 +284,12 @@ nav .button {
   border-radius: 5px;
   background-color: #eee;
 }
+
 .movieMsg_usersView span:nth-child(1) {
   color: deepskyblue;
   cursor: pointer;
 }
+
 .movieMsg_usersView span:nth-child(2) {
   color: #666;
 }
-
-/*# sourceMappingURL=moviesConsultation.css.map */

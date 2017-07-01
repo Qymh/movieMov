@@ -13,6 +13,7 @@ nav {
   position: fixed;
   z-index: 100;
 }
+
 nav .logo {
   text-decoration: none;
   position: absolute;
@@ -22,10 +23,12 @@ nav .logo {
   cursor: pointer;
   box-align: center;
 }
+
 nav .nav_ul {
   position: absolute;
   left: 100px;
 }
+
 nav .nav_ul li {
   line-height: 50px;
   height: 50px;
@@ -35,19 +38,23 @@ nav .nav_ul li {
   float: left;
   cursor: pointer;
 }
+
 nav .nav_ul li:hover {
   background-color: deepskyblue;
   transition: all 0.2s ease-in-out;
 }
+
 nav .nav_ul a {
   text-decoration: none;
   color: linen;
 }
+
 nav div {
   position: absolute;
-  left: 530px;
+  left: 430px;
   margin-top: 7px;
 }
+
 nav .search {
   position: absolute;
   top: 45px;
@@ -55,6 +62,7 @@ nav .search {
   border: 1px solid #ddd;
   background: white;
 }
+
 nav .search li {
   height: 30px;
   line-height: 30px;
@@ -65,20 +73,23 @@ nav .search li {
   border-bottom: 1px solid #eee;
   cursor: pointer;
 }
+
 nav .search li:hover {
   transition: all 0.2s ease-in-out;
   color: white;
   background-color: deeppink;
 }
+
 nav input {
   height: 30px;
   width: 200px;
   border-radius: 5px;
   padding-left: 10px;
 }
+
 nav .button {
   position: absolute;
-  left: 750px;
+  left: 650px;
   text-align: center;
   height: 36px;
   line-height: 36px;
@@ -108,6 +119,7 @@ nav .button {
   background-color: white;
   opacity: 0.8;
 }
+
 .moviesChip_attention {
   position: absolute;
   height: 180px;
@@ -115,6 +127,7 @@ nav .button {
   right: 0px;
   background-color: white;
 }
+
 .moviesChip_attention h1 {
   padding-left: 20px;
   font-size: 15px;
@@ -122,18 +135,21 @@ nav .button {
   line-height: 30px;
   background-color: whitesmoke;
 }
+
 .moviesChip_attention .weixin {
   height: 130px;
   width: 130px;
   margin-top: 10px;
   margin-left: 10px;
 }
+
 .moviesChip_attention .weibo {
   height: 130px;
   width: 130px;
   margin-top: -10px;
   margin-left: 20px;
 }
+
 .moviesChip_img {
   position: absolute;
   top: 45px;
@@ -142,6 +158,7 @@ nav .button {
   width: 150px;
   cursor: pointer;
 }
+
 .moviesChip_title {
   cursor: pointer;
   position: absolute;
@@ -150,18 +167,23 @@ nav .button {
   color: black;
   font-size: 25px;
 }
+
 .moviesChip_title a {
   text-decoration: none;
 }
+
 .moviesChip_title a:visited {
   color: black;
 }
+
 .moviesChip_title a:link {
   color: black;
 }
+
 .moviesChip_title a:hover {
   color: deeppink;
 }
+
 .moviesChip_actor {
   position: absolute;
   font-size: 15px;
@@ -169,6 +191,7 @@ nav .button {
   top: 85px;
   color: brown;
 }
+
 .moviesChip_description {
   position: absolute;
   font-size: 15px;
@@ -177,26 +200,32 @@ nav .button {
   left: 180px;
   color: #666;
 }
+
 .moviesChip_grade {
   position: absolute;
   right: 30px;
   top: 15px;
   font-size: 15px;
 }
+
 .moviesChip_grade > span {
   margin-left: 5px;
 }
+
 .moviesChip_grade span:nth-child(1) {
   color: lawngreen;
 }
+
 .moviesChip_grade span:nth-child(2) {
   color: brown;
 }
+
 .moviesChip_button {
   position: absolute;
   bottom: 20px;
   left: 180px;
 }
+
 .moviesChip_button > span {
   cursor: pointer;
   padding: 5px;
@@ -205,10 +234,12 @@ nav .button {
   color: #666;
   margin-left: 5px;
 }
+
 .moviesChip_button > span:hover {
   transition: all 0.2s ease-in-out;
   border-color: deepskyblue;
 }
+
 .moviesChip_date {
   position: absolute;
   bottom: 22px;
@@ -216,6 +247,7 @@ nav .button {
   color: #666;
   right: 70px;
 }
+
 .moviesChip_collect {
   position: absolute;
   bottom: 22px;
@@ -224,6 +256,7 @@ nav .button {
   color: dodgerblue;
   cursor: pointer;
 }
+
 .moviesChip_counter {
   position: absolute;
   font-size: 20px;
@@ -238,6 +271,7 @@ nav .button {
   margin-top: 10px;
   left: 23%;
 }
+
 .moviesChip_counter > span {
   cursor: pointer;
   height: 20px;
@@ -245,14 +279,14 @@ nav .button {
   padding: 10px;
   border-radius: 5px;
 }
+
 .moviesChip_counter > span:hover {
   transition: all 0.2s ease-in-out;
   color: white;
   background-color: deeppink;
 }
+
 .moviesChip_counter_name {
   background-color: deeppink;
   color: white;
 }
-
-/*# sourceMappingURL=moviesShow.css.map */
