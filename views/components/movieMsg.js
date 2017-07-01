@@ -1,5 +1,5 @@
 angular.module('homepage')
-	.constant('moviesPress','http://localhost:3000/api/agent/moviesPress/')	// 获取电影报刊
+	.constant('moviesPress','/api/agent/moviesPress/')	// 获取电影报刊
 	.constant('size','6')
 	.directive('movieMsg', function($resource,moviesPress,size) {
 		return {

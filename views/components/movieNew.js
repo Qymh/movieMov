@@ -1,5 +1,5 @@
 angular.module('homepage')
-.constant('moviesNew','http://localhost:3000/api/agent/moviesAllSettingNew/')
+.constant('moviesNew','/api/agent/moviesAllSettingNew/')
 .directive('movieNew',function($resource,moviesNew){
 	return{
 		link:function(scope,element,attrs){
