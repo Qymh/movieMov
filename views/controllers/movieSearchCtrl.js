@@ -2,27 +2,12 @@ angular.module('movieSearch')
 	.constant('needSize', '6')
 	.constant('baseurlForShow', 'http://localhost:5500/movienew/')
 	.controller('movieSearchCtrl', function($scope, $location, $element, $resource, baseurlForShow, needSize) {
-		$scope.navs = [{
-				name: '咨询',
-				href: '#'
-			},
-			{
-				name: '电影',
-				href: 'movieShow.ejs'
-			},
-			{
-				name: '电视剧',
-				href: '#'
-			},
-			{
-				name: '求片区',
-				href: '#'
-			},
-			{
-				name: '更多+',
-				href: '#'
-			}
-		];
+		$scope.navs=[
+			{name:'咨询',href:'/consultation'},
+			{name:'电影',href:'/moviesShow'},
+			{name:'求片区',href:'#'},
+			{name:'网盘区',href:'/moviesSkyDrive'}
+		]
 
 		$scope.finish = false;
 

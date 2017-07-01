@@ -1,10 +1,9 @@
 angular.module('moviesSkyDriveCtrl',[])
 .controller('moviesSkyDriveCtrl',function($scope){
 	$scope.navs=[
-		{name:'咨询',href:'#'},
+		{name:'咨询',href:'/consultation'},
 		{name:'电影',href:'/moviesShow'},
-		{name:'电视剧',href:'#'},
 		{name:'求片区',href:'#'},
-		{name:'更多+',href:'#'}
+		{name:'网盘区',href:'/moviesSkyDrive'}
 	]
 })

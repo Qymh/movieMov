@@ -10,12 +10,11 @@
 			angular.module('movie',['movieTemplate','movieFilter','ngResource'])
 			.controller('movieCtrl',function($scope){
 				$scope.navs=[
-					{name:'咨询',href:'#'},
+					{name:'咨询',href:'/consultation'},
 					{name:'电影',href:'/moviesShow'},
-					{name:'电视剧',href:'#'},
 					{name:'求片区',href:'#'},
 					{name:'网盘区',href:'/moviesSkyDrive'}
-				];
+				]
 			})
 		</script>
 		<script type="text/javascript" src="../views/components/movie.js" ></script>

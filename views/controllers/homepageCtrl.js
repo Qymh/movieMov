@@ -3,17 +3,9 @@ angular.module('homepageCtrl',[])
 	$scope.navs=[
 		{name:'咨询',href:'/consultation'},
 		{name:'电影',href:'/moviesShow'},
-		{name:'电视剧',href:'#'},
 		{name:'求片区',href:'#'},
 		{name:'网盘区',href:'/moviesSkyDrive'}
 	]
-	
-	$scope.usersDetails=[
-		{name:'首页'},
-		{name:'微信阅读'},
-		{name:'网盘区'},
-		{name:'海报'}
-	];
 	
 	$scope.searchButton=function(){
 		var span=$element.find('nav').find('span')[1];
