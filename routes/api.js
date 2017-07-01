@@ -64,7 +64,24 @@ exports.getMoviesAllNew=function(req,res,next){
 	})
 }
 
-// 获取电影
+// 获取所有电影
+exports.getMovies=function(req,res,next){
+	var arrJSON=[]
+	
+	MoviesAll.getRange(0,-1,function(err,movies){
+		movies.forEach(function(movie){
+			var src=movie.src
+			var name=movie.name
+			arrJSON.push({
+				src:src,
+				name:name
+			})
+		})
+		res.json(arrJSON)
+	})
+}
+
+// 获取电影一部分
 exports.getMoviesAll=function(req,res,next){
 	var page=req.moviesAllPage
 	MoviesAll.getRange(page.from,page.to,function(err,moviesAll){

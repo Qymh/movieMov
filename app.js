@@ -76,7 +76,8 @@ app.post('/api/agent/moviesPressProperty',api.postMoviesPressProperty)	// 提交
 app.del('/api/agent/moviesPressProperty/:property',api.deleteMoviesPressProperty)	// 删除电影报刊_属性
 
 /**********关于电影******/
-app.get('/api/agent/moviesAllSetting/:page',moviesAllPage(moviesAllLib.getPage,6),api.getMoviesAll)	// 获取电影
+app.get('/api/agent/moviesAllSetting',api.getMovies)	// 获取所有电影
+app.get('/api/agent/moviesAllSetting/:page',moviesAllPage(moviesAllLib.getPage,6),api.getMoviesAll)	// 获取电影一部分
 app.get('/api/agent/moviesAllSettingNew',api.getMoviesAllNew)	// 获取最新电影
 app.post('/api/agent/moviesAllSetting',api.postMoviesAll)		// 提交电影
 app.put('/api/agent/moviesAllSetting/:property',api.putMoviesAll)			// 修改电影
