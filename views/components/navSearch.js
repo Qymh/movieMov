@@ -1,5 +1,5 @@
 angular.module('navSearch', [])
-	.constant('baseurlForSearch', 'http://localhost:5500/movienew/')	// 所有电影数据
+	.constant('baseurlForSearch', '/api/agent/moviesAllSetting')	// 所有电影数据
 	.directive('navSearch', function(baseurlForSearch, $resource) {
 		return {
 			replace: true,
@@ -17,7 +17,6 @@ angular.module('navSearch', [])
 						
 						// 获取电影Resource
 						$scope.navSearchResource = $resource(baseurlForSearch);
-						
 						
 						// 获取电影数据JSON
 						$scope.navSearchs = $scope.navSearchResource.query();
@@ -66,8 +65,7 @@ angular.module('navSearch', [])
 				// 跳转至搜索页面
 				$scope.assign=function(item){
 					$scope.blurValue=true;
-					document.location.assign('http://127.0.0.1:8020/%E7%94%B5%E5%BD%B1%E7%BD%91%E7%AB%991/'+
-					'movieSearch.html#?count='+item.src+'&name='+item.name)
+					$location.path('/moviesSearch/count='+item.src+'&name='+item.name)
 				}
 			},
 			template: '<div><input type="text" placeholder="电视/电视剧"\

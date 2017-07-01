@@ -69,15 +69,7 @@ exports.getMovies=function(req,res,next){
 	var arrJSON=[]
 	
 	MoviesAll.getRange(0,-1,function(err,movies){
-		movies.forEach(function(movie){
-			var src=movie.src
-			var name=movie.name
-			arrJSON.push({
-				src:src,
-				name:name
-			})
-		})
-		res.json(arrJSON)
+		res.json(movies)
 	})
 }
 
