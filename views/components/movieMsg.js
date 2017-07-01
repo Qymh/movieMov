@@ -37,6 +37,11 @@ angular.module('homepage')
 						var spans=document.querySelectorAll('.movieMsg_count span')	// 获取所有页数
 						var spansEle=angular.element(spans)	// 将所有页数设置为元素
 						
+						// 返回顶部
+						window.pageYOffset=0 
+						document.documentElement.scrollTop=0 
+						document.body.scrollTop=0
+						
 						// 改变焦点UI
 						spansEle.removeClass('movieMsg_count_focus')
 						targetEle.addClass('movieMsg_count_focus')
@@ -60,9 +65,6 @@ angular.module('homepage')
 	
 						scope.movieMsg=scope.movieMsgResource.query();	// 更新电影报刊
 						// }
-						
-						console.log(scope.movieMsg)
-						
 					}
 				}
 			},
