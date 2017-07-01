@@ -1,5 +1,5 @@
 var MoviesPress=require('../lib/moviesPress')
-var Review=require('../lib/moviePressReview')
+var Review=require('../lib/moviesPressReview')
 
 // 显示报刊单独页面
 exports.show=function(req,res,next){

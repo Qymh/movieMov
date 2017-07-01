@@ -1,4 +1,4 @@
-var Review=require('../lib/moviePressReview'),		// 评论模版
+var Review=require('../lib/moviesPressReview'),		// 评论模版
 MoviesAll=require('../lib/moviesAll'),		// 获取电影模版
 MoviesPress=require('../lib/moviesPress') 	// 获取电影海报模版 
 MoviesSkyDrive=require('../lib/moviesSkyDrive')	// 获取电影网盘模版
