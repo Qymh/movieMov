@@ -31,6 +31,8 @@ exports.search=function(req,res,next){
 	}
 	var page=req.session.moviesAllPage||obj
 	
+	console.log(page)
+	
 	MoviesAll.getRange(page.from,page.to,function(err,moviesAll){
 			moviesAll.forEach(function(movie){
 				var src=movie.src

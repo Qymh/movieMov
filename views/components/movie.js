@@ -32,7 +32,6 @@ angular.module('movieTemplate',[])
 			}
 			
 			scope.movieResource.query().$promise.then(function(data){
-				console.log(data)
 				scope.movie=data[0]
 				titleEle.text(scope.movie.name)
 				headEle.append(titleEle)
