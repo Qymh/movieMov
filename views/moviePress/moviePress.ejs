@@ -9,9 +9,9 @@
 		<script type="text/javascript" src="../views/js/angular-resource.js" ></script>
 		<script>
 			angular.module('moviePress',['ngResource','navSearch'])
-			.constant('postForReview','http://localhost:3000/moviePressReview')
-			.constant('apiForReview','http://localhost:3000/api/moviePressReview')
-			.constant('getMoviesInformation','http://localhost:3000/api/agent/moviesPressInformation/')
+			.constant('postForReview','/moviePressReview')
+			.constant('apiForReview','/api/moviePressReview')
+			.constant('getMoviesInformation','/api/agent/moviesPressInformation/')
 			.controller('moviePressCtrl',function($scope,$element,$location,$resource,$window
 				,$filter,postForReview,apiForReview,getMoviesInformation){
 				
