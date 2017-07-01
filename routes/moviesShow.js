@@ -15,7 +15,7 @@ exports.show=function(req,res,next){
 
 exports.showNew=function(req,res,next){
 	var count=req.params.count
-	res.render('movies/'+count+'.ejs')
+	res.render('movies/movies.ejs')
 }
 
 exports.search=function(req,res,next){

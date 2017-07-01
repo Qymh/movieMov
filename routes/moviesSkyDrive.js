@@ -26,7 +26,7 @@ exports.show=function(req,res,next){
 // 显示单独的网盘界面
 exports.showNew=function(req,res,next){
 	var count=req.params.count
-	res.render('moviesSkyDrive/'+count+'.ejs')
+	res.render('moviesSkyDrive/moviesSkyDrive.ejs')
 }
 
 // 获取搜索的网盘单独页面
