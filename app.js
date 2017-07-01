@@ -42,6 +42,9 @@ app.get('/',homepage.list)
 // 电影界面
 app.get('/moviesShow',moviesShow.list)
 
+// 电影咨询界面
+app.get('/consultation',moviesPress.showMore)
+
 // 电影网盘界面
 app.get('/moviesSkyDrive',moviesSkyDrive.show)
 
@@ -55,7 +58,7 @@ app.get('/moviesNew/:count',moviesShow.showNew)
 app.get('/moviesSkyDrive/:count',moviesSkyDrive.showNew)
 
 // 电影报刊
-app.get('/moviePress/:count',moviePressReview.list)
+app.get('/moviePress/:count',moviesPress.show)
 
 /*********************************************关于API**********************************************/
 app.get('/api/moviePressReview/:count',api.moviePressReview)	// 获取评论
