@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="views/js/angular-resource.js" ></script>
 		<script>
 			angular.module('register', ['ngResource'])
-				.constant('baseurlForUser', 'http://localhost:3000/register')
+				.constant('baseurlForUser', '/register')
 				.controller('registerCtrl', function($scope,$window,
 					$http,$resource,$location, baseurlForUser) {
 

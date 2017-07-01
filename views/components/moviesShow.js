@@ -1,6 +1,6 @@
 angular.module('moviesShow')
 	.constant('size', '6')
-	.constant('moviesShow','http://localhost:3000/api/agent/moviesAllSetting/')	// 获取电影
+	.constant('moviesShow','/api/agent/moviesAllSetting/')	// 获取电影
 	.directive('movieChip', function(size,moviesShow,$resource) {
 		return {
 			scope:{

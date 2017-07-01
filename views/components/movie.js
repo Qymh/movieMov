@@ -1,6 +1,6 @@
 angular.module('movieTemplate',[])
-.constant('movie','http://localhost:3000/api/agent/moviesShow/')
-.constant('movieNew','http://localhost:3000/api/agent/moviesShowNew/')
+.constant('movie','/api/agent/moviesShow/')
+.constant('movieNew','/api/agent/moviesShowNew/')
 .directive('myMovie',function($location,$resource,movie,movieNew){
 	return{
 		scope:{

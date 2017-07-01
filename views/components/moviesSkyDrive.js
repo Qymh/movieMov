@@ -1,5 +1,5 @@
 angular.module('skyDrive',[])
-.constant('moviesSkyDrive','http://localhost:3000/api/agent/moviesSkyDrive/')
+.constant('moviesSkyDrive','/api/agent/moviesSkyDrive/')
 .constant('size','6')
 .directive('skyDrive',function(moviesSkyDrive,$resource,size){
 	return {

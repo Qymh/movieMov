@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="views/js/angular-resource.js"></script>
 		<script>
 			angular.module('sign',[])
-				.constant('baseurlForUser', 'http://localhost:5500/sign')
+				.constant('baseurlForUser', '/sign')
 				.controller('signCtrl', function($scope,$http,baseurlForUser) {
 					$scope.signn = function(infor) {
 						$http.post(baseurlForUser,infor)
