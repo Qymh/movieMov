@@ -3,6 +3,7 @@ var Review=require('../lib/moviesPressReview')
 
 // 显示报刊单独页面
 exports.show=function(req,res,next){
+	var count=req.params.count
 	Review.getRange(count,0,-1,function(err,reviews){
 		if(err) return next(err)
 		
