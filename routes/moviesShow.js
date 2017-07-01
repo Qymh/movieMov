@@ -11,13 +11,11 @@ exports.list=function(req,res,next){
 
 // 显示单独电影界面
 exports.show=function(req,res,next){
-	var count=req.params.count
 	res.render('movies/movies.ejs')
 }
 
 // 显示单独最新电影界面
 exports.showNew=function(req,res,next){
-	var count=req.params.count
 	res.render('movies/movies.ejs')
 }
 
@@ -29,7 +27,7 @@ exports.search=function(req,res,next){
 		page:0,
 		perpage:6,
 		from:0,
-		to:5,
+		to:-1,
 	}
 	var page=req.session.moviesAllPage||obj
 	
