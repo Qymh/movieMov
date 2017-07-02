@@ -13,7 +13,7 @@ angular.module('homepageCtrl',[])
 		if(!input.val()){
 			window.alert('请输入内容');
 		}else{
-			$location.path('/moviesSearch?name='+input.val())
+			document.location.replace('/moviesSearch?name='+input.val())
 		}
 	}
 	
