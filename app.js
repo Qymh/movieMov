@@ -92,8 +92,14 @@ app.get('/api/agent/moviesAllSettingProperty',api.getMoviesAllProperty)	// 获�
 app.post('/api/agent/moviesAllSetting/property',api.postMoviesAllProperty)	// 提交电影_属性
 app.del('/api/agent/moviesAllSetting/property/:property',api.deleteMoviesAllProperty)	// 删除电影_属性
 
+app.get('/api/agent/moviesShow/:count',moviesShow.search)	// 获取搜索的电影
+app.get('/api/agent/moviesSearch/:count',moviesShow.searchAll)	// 获取搜索出电影的搜索
+app.get('/api/agent/moviesShowNew/:count',moviesShow.searchNew)	// 获取最新电影的搜索
+
 /**********关于电影网盘*******/
+app.get('/api/agent/moviesSkyDrive',api.getMoviesSkyDriveAll)	// 获取所有电影网盘
 app.get('/api/agent/moviesSkyDrive/:page',moviesSkyDrivePage(moviesSkyDriveLib.getPage,6),api.getMoviesSkyDrive)	// 获取电影网盘
+app.get('/api/agent/moviesSkyDriveSearch',moviesSkyDrive.showSearch)	// 获取搜索电影网盘
 app.post('/api/agent/moviesSkyDrive',api.postMoviesSkyDrive)		// 提交电影网盘
 app.put('/api/agent/moviesSkyDrive/:property',api.putMoviesSkyDrive)			// 修改电影网盘
 
@@ -101,9 +107,6 @@ app.get('/api/agent/moviesSkyDriveProperty',api.getMoviesSkyDriveProperty)	// �
 app.post('/api/agent/moviesSkyDriveProperty',api.postMoviesSkyDriveProperty)	// 提交电影网盘_属性
 app.del('/api/agent/moviesSkyDriveProperty/:property',api.deleteMoviesSkyDriveProperty)	// 删除电影网盘_属性
 
-app.get('/api/agent/moviesShow/:count',moviesShow.search)	// 获取搜索的电影
-app.get('/api/agent/moviesSearch/:count',moviesShow.searchAll)	// 获取搜索出电影的搜索
-app.get('/api/agent/moviesShowNew/:count',moviesShow.searchNew)	// 获取最新电影的搜索
 app.get('/api/agent/moviesSkyDriveOnce/:count',moviesSkyDrive.search)	// 获取网盘的搜索
 
 app.get('/api/agent/moviesPressInformation/:count',api.moviesPressInformation)	// 获取搜索的报刊

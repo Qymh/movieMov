@@ -1,8 +1,8 @@
 <div class="skyDrive_search">
 	<input placeholder="搜索网盘区">
-	<span>搜索</span>
+	<span ng-click="search()">搜索</span>
 </div>
-<a class="skyDrive_movies" href="/moviesSkyDrive/{{movie.src}}" ng-repeat="movie in moviesSkyDrive">
+<a class="skyDrive_movies" href="/moviesSkyDrive/{{movie.src}}" ng-repeat="movie in moviesSkyDrive|limitTo:10">
 		<span class="skyDrive_movies_name">{{movie.name}}</span>
 		<span class="skyDrive_movies_time">{{movie.time}}</span>
 </a>

@@ -3,7 +3,7 @@
 	<img class="weixin">
 	<img class="weibo">
 </div>
-<div class="moviesChip" ng-repeat="movie in moviesShow">
+<div class="moviesChip" ng-repeat="movie in moviesShow|limitTo:7">
 	<a target="_blank" ng-href='/moviesSearch/{{movie.src}}'>
 		<img class="moviesChip_img" ng-src=views/movieChipImages/{{movie.src}}.png>
 	</a>

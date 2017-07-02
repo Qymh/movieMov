@@ -251,11 +251,21 @@ exports.deleteMoviesPressProperty=function(req,res,next){
 
 /*****************************获取电影网盘开始*******************************/
 
-// 获取电影网盘
+// 获取电影网盘一部分
 exports.getMoviesSkyDrive=function(req,res,next){
 	var page=req.session.moviesSkyDrivePage=res.locals.moviesSkyDrivePage=req.moviesSkyDrivePage
 	
 	MoviesSkyDrive.getRange(page.from,page.to,function(err,moviesSkyDrive){
+		res.json(moviesSkyDrive)
+	})
+}
+
+// 获取电影网盘所有
+exports.getMoviesSkyDriveAll=function(req,res,next){
+	console.log(req.query)
+	console.log(1)
+	
+	MoviesSkyDrive.getRange(0,-1,function(err,moviesSkyDrive){
 		res.json(moviesSkyDrive)
 	})
 }

@@ -1,7 +1,8 @@
 angular.module('skyDrive',[])
+.constant('moviesSkyDriveSearch','/api/agent/moviesSkyDriveSearch')
 .constant('moviesSkyDrive','/api/agent/moviesSkyDrive/')
 .constant('size','6')
-.directive('skyDrive',function(moviesSkyDrive,$resource,size){
+.directive('skyDrive',function(moviesSkyDrive,$resource,size,moviesSkyDriveSearch,$location){
 	return {
 		scope:{
 			total:'=informationTotal'	// 总网盘长度
@@ -73,6 +74,20 @@ angular.module('skyDrive',[])
 					scope.moviesSkyDriveResource=$resource(moviesSkyDrive+scope.page);	// 电影网盘Resource
 	
 					scope.moviesSkyDrive=scope.moviesSkyDriveResource.query();	// 获取电影网盘
+				}
+			}
+			
+			scope.search=function(){
+				var input=element.find('input')
+				var inputEle=angular.element(input)
+				var value=inputEle.val()
+				
+				if(!value){
+					window.alert('请输入内容');
+				}else{
+					scope.moviesSkyDriveResource=$resource(moviesSkyDriveSearch+'?name='+value)
+					scope.moviesSkyDrive=scope.moviesSkyDriveResource.query()
+					scope.counts=[]
 				}
 			}
 		},

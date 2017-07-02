@@ -16,6 +16,7 @@ exports.list=function(req,res,next){
 
 // 显示网盘界面
 exports.show=function(req,res,next){
+	
 	MoviesSkyDrive.getPage(function(err,total){
 		res.render('moviesSkyDrive.ejs',{
 			total:total
@@ -26,6 +27,21 @@ exports.show=function(req,res,next){
 // 显示单独的网盘界面
 exports.showNew=function(req,res,next){
 	res.render('moviesSkyDrive/moviesSkyDrive.ejs')
+}
+
+// 显示搜索后单独的网盘界面
+exports.showSearch=function(req,res,next){
+	var name=req.query.name
+	var arr=[]
+	MoviesSkyDrive.getRange(0,-1,function(err,moviesSkyDrive){
+		moviesSkyDrive.forEach(function(item){
+			var date=item.name
+			if(date.indexOf(name)>-1){
+				arr.push(item)
+			}
+		})
+		res.json(arr)
+	})
 }
 
 // 获取搜索的网盘单独页面
