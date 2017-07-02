@@ -65,7 +65,7 @@ angular.module('navSearch', [])
 				// 跳转至搜索页面
 				$scope.assign=function(item){
 					$scope.blurValue=true;
-					document.location.replace('/moviesSearch?name='+item.name)
+					document.location.href('/moviesSearch?name='+item.name)
 				}
 			},
 			template: '<div><input type="text" placeholder="电视/电视剧"\

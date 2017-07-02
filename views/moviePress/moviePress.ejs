@@ -14,6 +14,8 @@
 			.controller('moviePressCtrl',function($scope,$element,$location,$resource,$window
 				,$filter,postForReview,apiForReview,getMoviesInformation){
 				
+				
+				
 				// 获取页面参数
 				var test=$location.absUrl(),
 				count=test.match(/\/\d+/g)[0].match(/\d+/g)[0]
@@ -27,6 +29,22 @@
 					{name:'求片区',href:'#'},
 					{name:'网盘区',href:'/moviesSkyDrive'}
 				]
+				
+				$scope.searchButton=function(){
+					var span=$element.find('nav').find('span')[1];
+					var input=$element.find('nav').find('input');
+					if(!input.val()){
+						window.alert('请输入内容');
+					}else{
+						document.location.href('/moviesSearch?name='+input.val())
+					}
+				}
+				
+				$scope.searchKeyDown=function(e){
+					if(e.keyCode==13){
+						$scope.searchButton()
+					}
+				}
 				
 				// 获取报刊Resource
 				$scope.moviesInformationResource=$resource(getMoviesInformation+count)

@@ -7,22 +7,13 @@ angular.module('moviesShow')
 		{name:'网盘区',href:'/moviesSkyDrive'}
 	]
 	
-	var width=document.documentElement.clientWidth||document.body.clientWidth,	// 获取页面宽度
-	designWidth=952,		// 设计时的宽度
-	differ=(parseInt(width)-designWidth)/2,	// 获取当前页面宽度与设计宽度的差值
-	leftPersent=(differ/width)*100+'%'
-	moviesBox=document.querySelectorAll('.moviesBox')[0],
-	moviesBoxEle=angular.element(moviesBox)
-	
-	moviesBoxEle.attr('style','left:'+leftPersent)
-	
 	$scope.searchButton=function(){
 		var span=$element.find('nav').find('span')[1];
 		var input=$element.find('nav').find('input');
 		if(!input.val()){
 			window.alert('请输入内容');
 		}else{
-			document.location.assign('http://127.0.0.1:8020/电影网站1/movieSearch.ejs#?name='+input.val());
+			document.location.href('/moviesSearch?name='+input.val())
 		}
 	}
 	
@@ -31,4 +22,13 @@ angular.module('moviesShow')
 			$scope.searchButton()
 		}
 	}
+	
+	var width=document.documentElement.clientWidth||document.body.clientWidth,	// 获取页面宽度
+	designWidth=952,		// 设计时的宽度
+	differ=(parseInt(width)-designWidth)/2,	// 获取当前页面宽度与设计宽度的差值
+	leftPersent=(differ/width)*100+'%'
+	moviesBox=document.querySelectorAll('.moviesBox')[0],
+	moviesBoxEle=angular.element(moviesBox)
+	
+	moviesBoxEle.attr('style','left:'+leftPersent)
 })

@@ -17,6 +17,22 @@
 					{name:'网盘区',href:'/moviesSkyDrive'}
 				]
 				
+				$scope.searchButton=function(){
+					var span=$element.find('nav').find('span')[1];
+					var input=$element.find('nav').find('input');
+					if(!input.val()){
+						window.alert('请输入内容');
+					}else{
+						document.location.href('/moviesSearch?name='+input.val())
+					}
+				}
+				
+				$scope.searchKeyDown=function(e){
+					if(e.keyCode==13){
+						$scope.searchButton()
+					}
+				}
+				
 				var width=document.documentElement.clientWidth||document.body.clientWidth,	// 获取页面宽度
 				designWidth=952,		// 设计时的宽度
 				differ=(parseInt(width)-designWidth)/2,	// 获取当前页面宽度与设计宽度的差值

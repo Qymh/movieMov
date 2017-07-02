@@ -6,4 +6,20 @@ angular.module('moviesSkyDriveCtrl',[])
 		{name:'求片区',href:'#'},
 		{name:'网盘区',href:'/moviesSkyDrive'}
 	]
+	
+	$scope.searchButton=function(){
+		var span=$element.find('nav').find('span')[1];
+		var input=$element.find('nav').find('input');
+		if(!input.val()){
+			window.alert('请输入内容');
+		}else{
+			document.location.href('/moviesSearch?name='+input.val())
+		}
+	}
+	
+	$scope.searchKeyDown=function(e){
+		if(e.keyCode==13){
+			$scope.searchButton()
+		}
+	}
 })
