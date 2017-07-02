@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="moviesAdvice">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../views/css/moviesAdvice.css" />
+		<script type="text/javascript" src="../views/js/angular.js"></script>
+		<script type="text/javascript" src="../views/js/angular-resource.js"></script>
+		<script>
+			angular.module('moviesAdvice', ['moviesAdviceCtrl', 'ngResource', 'navSearch'])
+		</script>
+		<script type="text/javascript" src="../views/controllers/moviesAdviceCtrl.js"></script>
+		<script type="text/javascript" src="../views/components/navSearch.js"></script>
+		<script type="text/javascript" src="../views/components/moviesAdvice.js"></script>
+	</head>
+
+	<body ng-controller="moviesAdviceCtrl">
+		<nav class="nav">
+			<a target="_self" href="/" class="logo"><span>人生05</span></a>
+			<ul class="nav_ul">
+				<a target="_blank" href="{{nav.href}}" ng-repeat="nav in navs">
+					<li>
+						{{nav.name}}
+					</li>
+				</a>
+			</ul>
+			<div nav-search ng-keydown='searchKeyDown($event)'>
+			</div>
+			<span class="button" ng-click="searchButton()">搜索</button>
+		</nav>
+		<section class="moviesAdvice" total="<%= total %>">
+			<div class="moviesAdvice_search">
+				<input placeholder="搜索">
+				<span>搜索</span>
+			</div>
+			<div class="moviesAdvice_review">
+				<% if(locals.user) { %>
+					<div class="moviesAdvice_review_user">
+						<h1><%= locals.user.name %></h1>
+						<textarea placeholder="留下点儿什么... ..." ng-model="msg"></textarea>
+						<span ng-click="send(msg,'<%= locals.user.name %>')">发送</span>
+					</div>
+				<% }else{ %>
+					<div class="moviesAdvice_review_sign">
+						<a href="/sign">您需要登陆才能评论,点击此处登陆</a>
+					</div>
+					<% } %>
+				<div class="moviesAdvice_review_advice" ng-repeat="review in reviews">
+					<div class="moviesAdvice_review_advice_img">{{review.name}}</div>
+					<div class="moviesAdvice_review_advice_name">{{review.name}}</div>
+					<p class="moviesAdvice_review_advice_msg">{{review.msg|limitTo:60}}</p>
+					<div class="moviesAdvice_review_advice_time">{{review.time}}</div>
+				</div>
+			</div>
+			<div class="moviesAdvice_counter">
+				<span ng-repeat="count in counts" ng-click="show(count,$event)">{{count}}</span>
+			</div>
+		</section>
+	</body>
+
+</html>

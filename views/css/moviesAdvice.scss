@@ -1,0 +1,276 @@
+@import 'compatibility';
+body {
+    background-color: whitesmoke;
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: darkslateblue;
+    position: fixed;
+    z-index: 100;
+    & .logo {
+        text-decoration: none;
+        position: absolute;
+        left: 20px;
+        line-height: 50px;
+        color: white;
+        cursor: pointer;
+        box-align: center;
+    }
+    & .nav_ul {
+        position: absolute;
+        left: 100px;
+        & li {
+            line-height: 50px;
+            height: 50px;
+            width: 70px;
+            text-align: center;
+            margin-left: 10px;
+            float: left;
+            cursor: pointer;
+            &:hover {
+                background-color: deepskyblue;
+                transition: all 0.2s ease-in-out;
+            }
+        }
+        & a {
+            text-decoration: none;
+            color: linen;
+        }
+    }
+    & div {
+        position: absolute;
+        left: 430px;
+        margin-top: 7px;
+    }
+    & .search {
+        position: absolute;
+        top: 45px;
+        width: 214px;
+        border: 1px solid #ddd;
+        background: white;
+        & li {
+            height: 30px;
+            line-height: 30px;
+            padding-left: 10px;
+            font-size: 15 px;
+            margin-top: 5px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            &:hover {
+                transition: all 0.2s ease-in-out;
+                color: white;
+                background-color: deeppink;
+            }
+        }
+    }
+    & input {
+        height: 30px;
+        width: 200px;
+        border-radius: 5px;
+        padding-left: 10px;
+    }
+    & .button {
+        position: absolute;
+        left: 650px;
+        text-align: center;
+        height: 36px;
+        line-height: 36px;
+        width: 36px;
+        margin-top: 7px;
+        background-color: deepskyblue;
+        padding: 0px 10px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+.moviesAdvice {
+    position: absolute;
+    width: 700px;
+    left: 15%;
+    top: 100px;
+    &_search {
+        width: 100%;
+        height: 50px;
+        box-shadow: 0px 0px 3px #C3C3C4;
+        line-height: 50px;
+        background-color: white;
+        & input {
+            margin-left: 20px;
+            height: 50%;
+            padding-left: 20px;
+            width: 80%;
+            @include border-radius(5px);
+            border: 1px solid #CCCCCC;
+            @include box-shadow(0px 0px 2px #ddd)
+        }
+        & span {
+            padding: 7px 12px;
+            color: white;
+            background-color: deepskyblue;
+            cursor: pointer;
+            &:hover {
+                background-color: deeppink;
+                @include transition(all 0.2s ease-in-out)
+            }
+        }
+    }
+    &_sign {
+        position: absolute;
+        top: 100px;
+        background-color: white;
+        width: 100%;
+        &_user {
+            width: 300px;
+            height: 50px;
+            margin-left: 10%;
+            background-color: deepskyblue;
+            line-height: 50px;
+            cursor: pointer;
+            text-align: center;
+            &:hover {
+                @include transition(all 0.2s ease-in-out);
+                background-color: deeppink;
+            }
+            & a {
+                text-decoration: none;
+                &:link {
+                    color: white;
+                }
+                &:visited {
+                    color: white;
+                }
+            }
+        }
+    }
+    &_review {
+        margin-top: 50px;
+        background-color: white;
+        padding-bottom: 50px;
+        &_sign {
+            padding-top: 50px;
+            width: 100%;
+            & a {
+                width: 300px;
+                height: 50px;
+                margin-left: 10%;
+                background-color: deepskyblue;
+                line-height: 50px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                display: block;
+                &:link {
+                    color: white;
+                }
+                &:visited {
+                    color: white;
+                }
+                &:hover {
+                    @include transition(all 0.2s ease-in-out);
+                    background-color: deeppink;
+                }
+            }
+        }
+        &_user {
+            margin-top: 50px;
+            margin-left: 100px;
+            & h1 {
+                padding-top: 50px;
+                color: blueviolet;
+                margin-bottom: 20px;
+            }
+            & textarea {
+                width: 500px;
+                height: 100px;
+                @include border-radius(5px);
+                @include box-shadow(0 0 3px #ccc);
+            }
+            & span {
+                text-align: center;
+                height: 35px;
+                width: 55px;
+                margin-top: 10px;
+                margin-left: 450px;
+                line-height: 35px;
+                display: block;
+                background-color: deepskyblue;
+                color: white;
+                cursor: pointer;
+            }
+        }
+        &_advice {
+            margin-top: 50px;
+            margin-left: 100px;
+            padding-bottom: 20px;
+            height: 100px;
+            width: 80%;
+            border-bottom: 1px solid #CDCDCD;
+            position: relative;
+            &_img {
+                height: 50px;
+                width: 50px;
+                line-height: 50px;
+                text-align: center;
+                @include border-radius(50%);
+                background-color: lightgray;
+                color: white;
+            }
+            &_name {
+                margin-top: -35px;
+                margin-left: 70px;
+                color: blueviolet;
+            }
+            &_msg {
+                width: 400px;
+                word-break: break-all;
+                margin-top: 10px;
+                line-height: 20px;
+                margin-left: 70px;
+            }
+            &_time {
+                position: absolute;
+                bottom: 10px;
+                right: 20px;
+                font-size: 13px;
+                color: deepskyblue;
+            }
+        }
+    }
+    &_counter {
+        position: absolute;
+        font-size: 20px;
+        width: 330px;
+        height: 50px;
+        background-color: white;
+        cursor: pointer;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        padding-left: 20px;
+        margin-top: 10px;
+        left: 23%;
+        
+        &>span {
+            cursor: pointer;
+            height: 20px;
+            width: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            &:hover {
+                transition: all 0.2s ease-in-out;
+                color: white;
+                background-color: deeppink;
+            }
+        }
+        &_name {
+            background-color: deeppink;
+            color: white;
+        }
+    }
+}

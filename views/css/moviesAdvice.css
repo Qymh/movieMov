@@ -1,0 +1,305 @@
+@import url(reset.css);
+body {
+  background-color: whitesmoke;
+  width: 100%;
+}
+
+nav {
+  width: 100%;
+  height: 50px;
+  background-color: darkslateblue;
+  position: fixed;
+  z-index: 100;
+}
+nav .logo {
+  text-decoration: none;
+  position: absolute;
+  left: 20px;
+  line-height: 50px;
+  color: white;
+  cursor: pointer;
+  box-align: center;
+}
+nav .nav_ul {
+  position: absolute;
+  left: 100px;
+}
+nav .nav_ul li {
+  line-height: 50px;
+  height: 50px;
+  width: 70px;
+  text-align: center;
+  margin-left: 10px;
+  float: left;
+  cursor: pointer;
+}
+nav .nav_ul li:hover {
+  background-color: deepskyblue;
+  transition: all 0.2s ease-in-out;
+}
+nav .nav_ul a {
+  text-decoration: none;
+  color: linen;
+}
+nav div {
+  position: absolute;
+  left: 430px;
+  margin-top: 7px;
+}
+nav .search {
+  position: absolute;
+  top: 45px;
+  width: 214px;
+  border: 1px solid #ddd;
+  background: white;
+}
+nav .search li {
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  font-size: 15 px;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+nav .search li:hover {
+  transition: all 0.2s ease-in-out;
+  color: white;
+  background-color: deeppink;
+}
+nav input {
+  height: 30px;
+  width: 200px;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+nav .button {
+  position: absolute;
+  left: 650px;
+  text-align: center;
+  height: 36px;
+  line-height: 36px;
+  width: 36px;
+  margin-top: 7px;
+  background-color: deepskyblue;
+  padding: 0px 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.moviesAdvice {
+  position: absolute;
+  width: 700px;
+  left: 15%;
+  top: 100px;
+}
+.moviesAdvice_search {
+  width: 100%;
+  height: 50px;
+  box-shadow: 0px 0px 3px #C3C3C4;
+  line-height: 50px;
+  background-color: white;
+}
+.moviesAdvice_search input {
+  margin-left: 20px;
+  height: 50%;
+  padding-left: 20px;
+  width: 80%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #CCCCCC;
+  -webkit-box-shadow: 0px 0px 2px #ddd;
+  -moz-box-shadow: 0px 0px 2px #ddd;
+  -box-shadow: 0px 0px 2px #ddd;
+}
+.moviesAdvice_search span {
+  padding: 7px 12px;
+  color: white;
+  background-color: deepskyblue;
+  cursor: pointer;
+}
+.moviesAdvice_search span:hover {
+  background-color: deeppink;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.moviesAdvice_sign {
+  position: absolute;
+  top: 100px;
+  background-color: white;
+  width: 100%;
+}
+.moviesAdvice_sign_user {
+  width: 300px;
+  height: 50px;
+  margin-left: 10%;
+  background-color: deepskyblue;
+  line-height: 50px;
+  cursor: pointer;
+  text-align: center;
+}
+.moviesAdvice_sign_user:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-color: deeppink;
+}
+.moviesAdvice_sign_user a {
+  text-decoration: none;
+}
+.moviesAdvice_sign_user a:link {
+  color: white;
+}
+.moviesAdvice_sign_user a:visited {
+  color: white;
+}
+.moviesAdvice_review {
+  margin-top: 50px;
+  background-color: white;
+  padding-bottom: 50px;
+}
+.moviesAdvice_review_sign {
+  padding-top: 50px;
+  width: 100%;
+}
+.moviesAdvice_review_sign a {
+  width: 300px;
+  height: 50px;
+  margin-left: 10%;
+  background-color: deepskyblue;
+  line-height: 50px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+.moviesAdvice_review_sign a:link {
+  color: white;
+}
+.moviesAdvice_review_sign a:visited {
+  color: white;
+}
+.moviesAdvice_review_sign a:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-color: deeppink;
+}
+.moviesAdvice_review_user {
+  margin-top: 50px;
+  margin-left: 100px;
+}
+.moviesAdvice_review_user h1 {
+  padding-top: 50px;
+  color: blueviolet;
+  margin-bottom: 20px;
+}
+.moviesAdvice_review_user textarea {
+  width: 500px;
+  height: 100px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 3px #ccc;
+  -moz-box-shadow: 0 0 3px #ccc;
+  -box-shadow: 0 0 3px #ccc;
+}
+.moviesAdvice_review_user span {
+  text-align: center;
+  height: 35px;
+  width: 55px;
+  margin-top: 10px;
+  margin-left: 450px;
+  line-height: 35px;
+  display: block;
+  background-color: deepskyblue;
+  color: white;
+  cursor: pointer;
+}
+.moviesAdvice_review_advice {
+  margin-top: 50px;
+  margin-left: 100px;
+  padding-bottom: 20px;
+  height: 100px;
+  width: 80%;
+  border-bottom: 1px solid #CDCDCD;
+  position: relative;
+}
+.moviesAdvice_review_advice_img {
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  background-color: lightgray;
+  color: white;
+}
+.moviesAdvice_review_advice_name {
+  margin-top: -35px;
+  margin-left: 70px;
+  color: blueviolet;
+}
+.moviesAdvice_review_advice_msg {
+  width: 400px;
+  word-break: break-all;
+  margin-top: 10px;
+  line-height: 20px;
+  margin-left: 70px;
+}
+.moviesAdvice_review_advice_time {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  font-size: 13px;
+  color: deepskyblue;
+}
+.moviesAdvice_counter {
+  position: absolute;
+  font-size: 20px;
+  width: 330px;
+  height: 50px;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding-left: 20px;
+  margin-top: 10px;
+  left: 23%;
+}
+.moviesAdvice_counter > span {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.moviesAdvice_counter > span:hover {
+  transition: all 0.2s ease-in-out;
+  color: white;
+  background-color: deeppink;
+}
+.moviesAdvice_counter_name {
+  background-color: deeppink;
+  color: white;
+}
+
+/*# sourceMappingURL=moviesAdvice.css.map */

@@ -1,7 +1,8 @@
 var Review=require('../lib/moviesPressReview'),		// 评论模版
 MoviesAll=require('../lib/moviesAll'),		// 获取电影模版
-MoviesPress=require('../lib/moviesPress') 	// 获取电影海报模版 
-MoviesSkyDrive=require('../lib/moviesSkyDrive')	// 获取电影网盘模版
+MoviesPress=require('../lib/moviesPress'), 	// 获取电影海报模版 
+MoviesSkyDrive=require('../lib/moviesSkyDrive'),	// 获取电影网盘模版
+MoviesAdvice=require('../lib/moviesAdvice')	// 获取电影求片区模版
 
 
 /*****************************获取报刊评论开始*******************************/
@@ -54,6 +55,47 @@ exports.moviesPressInformation=function(req,res,next){
 }
 
 /*****************************获取报刊评论结束*******************************/
+
+/*****************************获取评论区开始*******************************/
+
+// 获取评论区
+exports.getMoviesAdviceAll=function(req,res,next){
+	MoviesAdvice.getRange(0,-1,function(err,moviesAdvice){
+		res.json(moviesAdvice)
+	})
+}
+
+// 获取评论区一部分
+exports.getMoviesAdvice=function(req,res,next){
+	var page=req.moviesAdvicePage
+	console.log(page)
+	
+	MoviesAdvice.getPage(page.from,page.to,function(err,moviesAdvice){
+		res.json(moviesAdvice)
+	})
+}
+
+// 提交评论区
+exports.postMoviesAdvice=function(req,res,next){
+	var data=req.body
+	var name=data.name
+	var msg=data.msg
+	var time=data.time
+	var obj={
+		msg:msg,
+		name:name,
+		time:time
+	}
+	
+	
+	var demo=new MoviesAdvice(obj)
+	
+	demo.saveRange(function(){
+		
+	})
+}
+
+/*****************************获取评论区结束*******************************/
 
 /*****************************获取电影信息开始*******************************/
 

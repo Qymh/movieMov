@@ -4,6 +4,7 @@ register=require('./routes/register'),		// 注册路由
 sign=require('./routes/sign'),				// 登陆路由
 homepage=require('./routes/homepage'),		// 主页路由
 moviesAll=require('./routes/moviesAll'),		// 电影管理路由
+moviesAdvice=require('./routes/moviesAdvice'),	// 电影求片区路由
 moviesPress=require('./routes/moviesPress'),	// 电影报刊管理路由
 moviesSkyDrive=require('./routes/moviesSkyDrive')	// 电影网盘管理路由
 moviePressReview=require('./routes/moviesPressReview'),  // 电影报刊评论路由   	
@@ -13,10 +14,12 @@ messages=require('./lib/messages'),			// 信息提示模版
 moviesPressLib=require('./lib/moviesPress'),	// 电影报刊模版
 moviesAllLib=require('./lib/moviesAll'),		// 电影模版
 moviesSkyDriveLib=require('./lib/moviesSkyDrive'),	// 电影网盘模版
+moviesAdviceLib=require('./lib/moviesAdvice'),		// 电影评论区模版
 user=require('./lib/middleware/user'),		// 用户信息储存
 moviesPressPage=require('./lib/middleware/moviesPress'),	// 电影报刊页数中间件
 moviesAllPage=require('./lib/middleware/moviesAll'),		// 电影页数中间件
-moviesSkyDrivePage=require('./lib/middleware/moviesSkyDrive') // 电影网盘页数中间件
+moviesSkyDrivePage=require('./lib/middleware/moviesSkyDrive'), // 电影网盘页数中间件
+moviesAdvicePage=require('./lib/middleware/moviesAdvice')	// 电影评论区页数中间件
 
 var app=express()
 
@@ -39,6 +42,9 @@ app.get('/logout',sign.logout)
 
 // 主页面
 app.get('/',homepage.list)
+
+// 建议评论区
+app.get('/advice',moviesAdvice.list)
 
 // 电影界面
 app.get('/moviesShow',moviesShow.list)
@@ -70,6 +76,10 @@ app.get('/moviePress/:count',moviesPress.show)
 /*********************************************关于API**********************************************/
 app.get('/api/moviePressReview/:count',api.moviePressReview)	// 获取评论
 app.post('/api/moviePressReview',api.moviePressReviewAdd)		// 添加评论
+
+app.get('/api/agent/moviesAdvice',api.getMoviesAdviceAll)			// 获取求片区
+app.get('/api/agent/moviesAdvice/:page',moviesAdvicePage(moviesAdviceLib.getPage,10),api.getMoviesAdvice)
+app.post('/api/agent/moviesAdvice',api.postMoviesAdvice)		// 提交求片区
 
 /*********关于电影报刊******/
 app.get('/api/agent/moviesPress/:page',moviesPressPage(moviesPressLib.getPage,6),api.getMoviesPress)	// 获取电影报刊
