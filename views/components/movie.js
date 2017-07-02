@@ -1,6 +1,6 @@
 angular.module('movieTemplate',[])
 .constant('movie','/api/agent/moviesShow/')
-.constant('movieSearch','/api/agent/moviesSearchAll/')
+.constant('movieSearch','/api/agent/moviesSearch/')
 .constant('movieNew','/api/agent/moviesShowNew/')
 .directive('myMovie',function($location,$resource,movie,movieNew,movieSearch){
 	return{
