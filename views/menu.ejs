@@ -1,7 +1,7 @@
 <% if(locals.user) { %>
 	<p class="users_photo"><%= user.name.slice(0,1) %></p>
 	<span class="users_online"><%= user.name %></span>
-	<a href="/member" class="users_sign"><span>个人中心</span></a>
+	<a class="users_sign" onclick="alert('暂未添加')"><span>个人中心</span></a>
 	<a href="/logout" class="users_log"><span>注销登陆</span></a>
 <% } else { %>
 	<img class="users_photo">
