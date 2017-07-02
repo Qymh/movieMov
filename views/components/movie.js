@@ -1,7 +1,8 @@
 angular.module('movieTemplate',[])
 .constant('movie','/api/agent/moviesShow/')
+.constant('movieSearch','/api/agent/moviesSearchAll/')
 .constant('movieNew','/api/agent/moviesShowNew/')
-.directive('myMovie',function($location,$resource,movie,movieNew){
+.directive('myMovie',function($location,$resource,movie,movieNew,movieSearch){
 	return{
 		scope:{
 			movieAll:'=movieAll'
@@ -25,8 +26,12 @@ angular.module('movieTemplate',[])
 			
 			var newOrOld=absurl.match(/\/\D+\//g)[0].match(/\w+/g)[0]
 			
+			console.log(newOrOld)
+			
 			if(newOrOld=='moviesShow'){	
 				scope.movieResource=$resource(movie+count)
+			}else if(newOrOld=='moviesSearch'){
+				scope.movieResource=$resource(movieSearch+count)
 			}else{
 				scope.movieResource=$resource(movieNew+count)
 			}

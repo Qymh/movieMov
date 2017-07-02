@@ -31,8 +31,6 @@ exports.search=function(req,res,next){
 	}
 	var page=req.session.moviesAllPage||obj
 	
-	console.log(page)
-	
 	MoviesAll.getRange(page.from,page.to,function(err,moviesAll){
 			moviesAll.forEach(function(movie){
 				var src=movie.src
@@ -43,6 +41,11 @@ exports.search=function(req,res,next){
 				}
 			})
 	})
+}
+
+// 显示搜索的电影单独界面
+exports.showSearch=function(req,res,next){
+	res.render('movies/movies.ejs')
 }
 
 // 按页数搜索最新电影
@@ -58,6 +61,22 @@ exports.searchNew=function(req,res,next){
 					res.json(arr)
 				}
 			})
+	})
+}
+
+// 点击搜索后电影的单独界面
+exports.searchAll=function(req,res,next){
+	var count=req.params.count
+	
+	MoviesAll.getRange(0,-1,function(err,moviesAll){
+		moviesAll.forEach(function(movie){
+			var src=movie.src
+			var arr=[]
+			if(src==count){
+				arr[0]=movie
+				res.json(arr)
+			}
+		})
 	})
 }
 

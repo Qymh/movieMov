@@ -54,6 +54,9 @@ app.get('/moviesSkyDrive',moviesSkyDrive.show)
 // 电影的单独界面
 app.get('/moviesShow/:count',moviesShow.show)
 
+// 搜索出电影的单独界面
+app.get('/moviesSearch/:count',moviesShow.showSearch)
+
 // 最新电影的单独界面
 app.get('/moviesNew/:count',moviesShow.showNew)
 
@@ -99,6 +102,7 @@ app.post('/api/agent/moviesSkyDriveProperty',api.postMoviesSkyDriveProperty)	// 
 app.del('/api/agent/moviesSkyDriveProperty/:property',api.deleteMoviesSkyDriveProperty)	// 删除电影网盘_属性
 
 app.get('/api/agent/moviesShow/:count',moviesShow.search)	// 获取搜索的电影
+app.get('/api/agent/moviesSearch/:count',moviesShow.searchAll)	// 获取搜索出电影的搜索
 app.get('/api/agent/moviesShowNew/:count',moviesShow.searchNew)	// 获取最新电影的搜索
 app.get('/api/agent/moviesSkyDriveOnce/:count',moviesSkyDrive.search)	// 获取网盘的搜索
 

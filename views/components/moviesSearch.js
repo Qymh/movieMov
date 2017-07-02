@@ -2,7 +2,7 @@ angular.module('moviesSearch')
 	.constant('moviesAll','/api/agent/moviesAllSetting')
 	.directive('movieChip', function($resource,$location,moviesAll) {
 		return {
-			templateUrl: 'views/components/templates/moviesShow.ejs',
+			templateUrl: 'views/components/templates/moviesSearch.ejs',
 			scope:{
 				total:'=informationTotal',	// 总电影长度
 				name:'=informationName'
