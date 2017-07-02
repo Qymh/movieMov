@@ -32,7 +32,7 @@
 		<section class="moviesAdvice" total="<%= total %>">
 			<div class="moviesAdvice_search">
 				<input placeholder="搜索">
-				<span>搜索</span>
+				<span ng-click="find()">搜索</span>
 			</div>
 			<div class="moviesAdvice_review">
 				<% if(locals.user) { %>
@@ -46,7 +46,7 @@
 						<a href="/sign">您需要登陆才能评论,点击此处登陆</a>
 					</div>
 					<% } %>
-				<div class="moviesAdvice_review_advice" ng-repeat="review in reviews">
+				<div class="moviesAdvice_review_advice" ng-repeat="review in reviews|limitTo:10">
 					<div class="moviesAdvice_review_advice_img">{{review.name}}</div>
 					<div class="moviesAdvice_review_advice_name">{{review.name}}</div>
 					<p class="moviesAdvice_review_advice_msg">{{review.msg|limitTo:60}}</p>

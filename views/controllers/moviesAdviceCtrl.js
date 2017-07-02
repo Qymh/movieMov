@@ -44,7 +44,8 @@ angular.module('moviesAdviceCtrl', [])
 			$scope.counts = $scope.counts.slice(0, 5)
 				.concat($scope.transition).concat($scope.counts.slice(-1)) // 初始页数数组
 		}
-
+		
+		// nav搜索电影
 		$scope.searchButton = function() {
 			var span = $element.find('nav').find('span')[1];
 			var input = $element.find('nav').find('input');
@@ -64,10 +65,9 @@ angular.module('moviesAdviceCtrl', [])
 		$scope.moviesAdviceResource = $resource(moviesAdvice+'/'+$scope.page)
 
 		$scope.reviews = $scope.moviesAdviceResource.query()
-
+		
+		// 提交评论
 		$scope.send = function(msg, name) {
-			console.log(1)
-			
 			var now = new Date()
 			var year = now.getFullYear()
 			var month = now.getMonth() + 1
@@ -91,7 +91,35 @@ angular.module('moviesAdviceCtrl', [])
 
 			new $scope.moviesAdviceResource(data).$save()
 		}
-
+		
+		// 在评论区中搜索
+		$scope.find=function(){
+			var input=document.querySelectorAll('.moviesAdvice_search input')[0]
+			var inputEle=angular.element(input)
+			var value=inputEle.val()
+			
+			if(!value){
+				window.alert('请输入内容!')
+			}else{
+				var arr=[]
+				var counter=document.querySelectorAll('.moviesAdvice_counter')[0]
+				var counterEle=angular.element(counter)
+				$scope.moviesAdviceResource = $resource(moviesAdvice)
+				$scope.moviesAdviceResource.query().$promise.then(function(movies){
+					movies.forEach(function(movie){
+						if(movie.msg.indexOf(value)>-1){
+							arr.push(movie)
+						}
+					})
+					
+					$scope.reviews=arr
+					
+					counterEle.remove()
+				})
+			}
+		}
+		
+		// 改变显示UI
 		$scope.change=function(count, $event) {
 			if(angular.isNumber(count)) {
 				var counts = $scope.countsAlone // 所有页数数组
