@@ -35,6 +35,7 @@ app.post('/register',register.send)
 // 登陆
 app.get('/sign',sign.list)
 app.post('/sign',sign.send)
+app.get('/logout',sign.logout)
 
 // 主页面
 app.get('/',homepage.list)
