@@ -12,7 +12,7 @@ exports.send=function(req,res,next){
 	
 	User.authenticate(name,pass,function(err,user){
 		if(err) return next(err)
-		if(user){
+		if(user.id){
 			req.session.uid=user.id
 			res.redirect('/')
 		}else{
