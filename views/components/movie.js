@@ -31,10 +31,13 @@ angular.module('movieTemplate',[])
 			if(newOrOld=='moviesShow'){	
 				scope.movieResource=$resource(movie+count)
 			}else if(newOrOld=='moviesSearch'){
+				console.log(1)
 				scope.movieResource=$resource(movieSearch+count)
 			}else{
 				scope.movieResource=$resource(movieNew+count)
 			}
+			
+			console.log(scope.movieResource.query())
 			
 			scope.movieResource.query().$promise.then(function(data){
 				scope.movie=data[0]
