@@ -75,7 +75,7 @@ app.get('/moviePress/:count',moviesPress.show)
 
 /*********************************************关于API**********************************************/
 app.get('/api/moviePressReview/:count',api.moviePressReview)	// 获取评论
-app.post('/api/moviePressReview',api.moviePressReviewAdd)		// 添加评论
+app.post('/api/moviePressReview/:count',api.moviePressReviewAdd)		// 添加评论
 
 app.get('/api/agent/moviesAdvice',api.getMoviesAdviceAll)			// 获取求片区
 app.get('/api/agent/moviesAdvice/:page',moviesAdvicePage(moviesAdviceLib.getPage,10),api.getMoviesAdvice)

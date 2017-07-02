@@ -60,7 +60,7 @@
 				$scope.moviePressReviewResource=$resource(apiForReview+'/'+count)
 				
 				// POST评论api
-				$scope.moviePressReviewAddResource=$resource(apiForReview)
+				$scope.moviePressReviewAddResource=$resource(apiForReview+'/'+count)
 				
 				// 获取评论到本地
 				$scope.reviews=$scope.moviePressReviewResource.query()

@@ -20,11 +20,12 @@ exports.moviePressReview=function(req,res,next){
 
 // 提交报刊评论
 exports.moviePressReviewAdd=function(req,res,next){
+	
 	var data=req.body,
 	des=data.des,
 	time=data.time,
 	name=data.name
-	var count=req.session.count
+	var count=req.params.count
 	
 	var review=new Review({
 		des:des,
