@@ -8,5 +8,10 @@
 	<body>
 		<div class="test"></div>
 		<div class="ib"></div>
+		<script>
+			var absurl='https://movie.stu.ecs.fornever.org/moviesSearch/007'
+			var newOrOld=absurl.match(/\/\w+\//g)[0].match(/\w+/g)[0]
+			console.log(newOrOld)
+		</script>
 	</body>
 </html>

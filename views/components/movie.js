@@ -24,7 +24,7 @@ angular.module('movieTemplate',[])
 				
 			var count=absurl.match(/\/\d+/g)[0].match(/\d+/g)[0]
 			
-			var newOrOld=absurl.match(/\/\D+\//g)[0].match(/\w+/g)[0]
+			var newOrOld=absurl.match(/\/\w+\//g)[0].match(/\w+/g)[0]
 			
 			console.log(newOrOld)
 			
