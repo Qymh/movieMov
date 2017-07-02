@@ -54,7 +54,8 @@
 				</div>
 			</div>
 			<div class="moviesAdvice_counter">
-				<span ng-repeat="count in counts" ng-click="show(count,$event)">{{count}}</span>
+				<span ng-repeat="count in counts" ng-class="count==1?'moviesAdvice_counter_focus':''"
+					 ng-click="change(count,$event)">{{count}}</span>
 			</div>
 		</section>
 	</body>

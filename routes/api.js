@@ -68,9 +68,8 @@ exports.getMoviesAdviceAll=function(req,res,next){
 // 获取评论区一部分
 exports.getMoviesAdvice=function(req,res,next){
 	var page=req.moviesAdvicePage
-	console.log(page)
 	
-	MoviesAdvice.getPage(page.from,page.to,function(err,moviesAdvice){
+	MoviesAdvice.getRange(page.from,page.to,function(err,moviesAdvice){
 		res.json(moviesAdvice)
 	})
 }

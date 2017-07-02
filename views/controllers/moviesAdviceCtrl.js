@@ -12,7 +12,7 @@ angular.module('moviesAdviceCtrl', [])
 			},
 			{
 				name: '求片区',
-				href: '#'
+				href: '/advice'
 			},
 			{
 				name: '网盘区',
@@ -66,6 +66,8 @@ angular.module('moviesAdviceCtrl', [])
 		$scope.reviews = $scope.moviesAdviceResource.query()
 
 		$scope.send = function(msg, name) {
+			console.log(1)
+			
 			var now = new Date()
 			var year = now.getFullYear()
 			var month = now.getMonth() + 1
@@ -82,18 +84,22 @@ angular.module('moviesAdviceCtrl', [])
 			}
 
 			$scope.reviews.push(data)
+			
+			$scope.reviews.reverse()
+			
+			$scope.moviesAdviceResource = $resource(moviesAdvice)
 
 			new $scope.moviesAdviceResource(data).$save()
 		}
 
-		$scope.show = function(count, $event) {
+		$scope.change=function(count, $event) {
 			if(angular.isNumber(count)) {
-				var counts = scope.countsAlone // 所有页数数组
-				var countsLength = scope.countsAlone.length //页数长度
+				var counts = $scope.countsAlone // 所有页数数组
+				var countsLength = $scope.countsAlone.length //页数长度
 				var temporaryArr = [] // 临时数组
 				var target = $event.target // 获取当前选取的页数
 				var targetEle = angular.element(target) // 将当前选择页数设置为元素
-				var spans = document.querySelectorAll('.movieMsg_count span') // 获取所有页数
+				var spans = document.querySelectorAll('.moviesAdvice_counter span') // 获取所有页数
 				var spansEle = angular.element(spans) // 将所有页数设置为元素
 
 				// 返回顶部
@@ -102,8 +108,8 @@ angular.module('moviesAdviceCtrl', [])
 				document.body.scrollTop = 0
 
 				// 改变焦点UI
-				spansEle.removeClass('movieMsg_count_focus')
-				targetEle.addClass('movieMsg_count_focus')
+				spansEle.removeClass('moviesAdvice_counter_focus')
+				targetEle.addClass('moviesAdvice_counter_focus')
 
 				// 改变显示UI
 				if(countsLength > 5) {
@@ -124,7 +130,7 @@ angular.module('moviesAdviceCtrl', [])
 
 				$scope.moviesAdviceResource = $resource(moviesAdvice + '/' + $scope.page); // 电影报刊Resource
 
-				$scope.moviesShow = $scope.moviesAdviceResource.query(); // 更新电影报刊
+				$scope.reviews = $scope.moviesAdviceResource.query(); // 更新电影报刊
 				// }
 			}
 		}
