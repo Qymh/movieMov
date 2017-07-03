@@ -105,17 +105,25 @@ angular.module('moviesAdviceCtrl', [])
 				var counter=document.querySelectorAll('.moviesAdvice_counter')[0]
 				var counterEle=angular.element(counter)
 				$scope.moviesAdviceResource = $resource(moviesAdvice)
-				$scope.moviesAdviceResource.query().$promise.then(function(movies){
-					movies.forEach(function(movie){
-						if(movie.msg.indexOf(value)>-1){
-							arr.push(movie)
+				
+					$scope.moviesAdviceResource.query().$promise.then(function(movies){
+						movies.forEach(function(movie){
+							if(movie.msg.indexOf(value)>-1){
+								arr.push(movie)
+							}
+						})
+						
+						$scope.reviews=arr
+						
+						counterEle.remove()
+						
+						if($scope.reviews.length==0){
+							var review={
+								msg:'您搜索的内容不存在'
+							}
+							$scope.reviews.push(review)
 						}
 					})
-					
-					$scope.reviews=arr
-					
-					counterEle.remove()
-				})
 			}
 		}
 		

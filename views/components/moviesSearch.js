@@ -26,6 +26,14 @@ angular.module('moviesSearch')
 					})
 				})
 				
+				if(scope.moviesShow.length==0){
+					var movie={
+						name:'您搜索的电影还未添加',
+						src:'../'
+					}
+					scope.moviesShow.push(movie)
+				}
+				
 				
 			}
 		}

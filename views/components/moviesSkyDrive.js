@@ -86,8 +86,19 @@ angular.module('skyDrive',[])
 					window.alert('请输入内容');
 				}else{
 					scope.moviesSkyDriveResource=$resource(moviesSkyDriveSearch+'?name='+value)
+					scope.moviesSkyDrive=[]
 					scope.moviesSkyDrive=scope.moviesSkyDriveResource.query()
 					scope.counts=[]
+					var movie={
+						name:'不存在您的搜索',
+						src:'../moviesSkyDrive'
+					}
+					
+					if(scope.moviesSkyDrive.length==0){
+						scope.moviesSkyDrive.$promise.then(function(data){
+							scope.moviesSkyDrive.push(movie)							
+						})
+					}
 				}
 			}
 		},
